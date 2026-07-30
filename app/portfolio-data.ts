@@ -41,20 +41,22 @@ export const projects: Project[] = [
       "Initiated the KAFART and Kaduna Museum augmented-reality integration and coordinated curatorial and technical contributors around one visitor journey.",
       "Planned communications across three festival editions and the 2025 British Council Abuja Pop-Up, then authored the official post-event report.",
       "Co-curated Hands of Resilience, supported Into the Art of Making and moderated a 2024 conversation on heritage, sustainability and the next generation of African creatives.",
+      "Joined the KAFART delegation on an institutional visit to the Emir and the Aliyu Dan Sidi Museum and Documentation Centre, supporting relationship-building around cultural preservation.",
     ],
     evidence: [
       "Five festival editions archived online",
       "100+ creatives represented by the platform",
       "Three-language public website",
       "Museum, festival and digital teams coordinated",
+      "Institutional engagement with traditional cultural leadership",
     ],
-    hero: "/assets/kafart-hands-of-resilience.jpg",
+    hero: "/assets/kafart-group-pic.jpg",
     heroAlt:
-      "Muhammad speaking with visitors inside the Hands of Resilience exhibition",
+      "The KAFART team and participating creatives gathered at the exhibition",
     accent: "forest",
     images: [
       {
-        src: "/assets/kafart-website.png",
+        src: "/assets/kafart-live-website.png",
         alt: "The KAFART website homepage for the sixth edition",
         caption:
           "The live KAFART website, built as a multilingual home for editions, exhibitors and open calls.",
@@ -70,6 +72,24 @@ export const projects: Project[] = [
         alt: "Muhammad moderating a KAFART panel with two guests",
         caption:
           "Moderating Future Forward at KAFART 2024, a discussion on heritage, sustainability, technology and African creative practice.",
+      },
+      {
+        src: "/assets/kafart-emir-audience.jpg",
+        alt: "Muhammad Al-amin Yusha'u standing with the Emir during a KAFART institutional visit",
+        caption:
+          "During KAFART's visit to the Emir, part of the platform's relationship-building with traditional cultural leadership.",
+      },
+      {
+        src: "/assets/kafart-emir-presentation.jpg",
+        alt: "The KAFART delegation presenting a framed artwork to the Emir",
+        caption:
+          "The KAFART delegation presenting a framed work during the visit.",
+      },
+      {
+        src: "/assets/kafart-emir-museum.jpg",
+        alt: "The KAFART delegation with the Emir at the Aliyu Dan Sidi Museum and Documentation Centre",
+        caption:
+          "The delegation at the Aliyu Dan Sidi Museum and Documentation Centre.",
       },
     ],
     links: [
@@ -127,6 +147,63 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "northern-creatives-conference",
+    title: "Northern Creatives Conference",
+    period: "2025",
+    discipline: "Stakeholder engagement, partnerships, rapportage",
+    lead:
+      "Representing Kaduna State through a 100+ stakeholder outreach pipeline, local partnerships and conference documentation.",
+    summary:
+      "As Kaduna State Focal Person and rapporteur for the Northern Creatives Conference 2025, I built the pathway between a regional conference in Kano and the creative communities, institutions and prospective partners I represented in Kaduna. The work combined outreach infrastructure, relationship-building, participant coordination and documentation.",
+    contribution: [
+      "Built and maintained a pipeline of more than 100 contacts across creative organisations, public institutions, media, development bodies and investment agencies.",
+      "Led Kaduna-focused mobilisation, follow-up and partner outreach so participation could be broad, coordinated and trackable.",
+      "Initiated and coordinated a local partnership with Wonderwise Productions, a Kaduna-based visual media production company.",
+      "Supported conference communications and logistics, then served as rapporteur to turn discussions and feedback into a useful institutional record.",
+    ],
+    evidence: [
+      "Appointed Kaduna State Focal Person",
+      "100+ stakeholders mapped and tracked",
+      "Wonderwise Productions partnership",
+      "Conference documentation and reporting",
+    ],
+    hero: "/assets/ncc-team.jpg",
+    heroAlt:
+      "Muhammad Al-amin Yusha'u with members of the Northern Creatives Conference team in Kano",
+    accent: "blue",
+    images: [
+      {
+        src: "/assets/ncc-focal-person.jpg",
+        alt: "Northern Creatives Conference announcement naming Muhammad Al-amin Yusha'u as Kaduna State Focal Person",
+        caption:
+          "The official announcement of my appointment as Kaduna State Focal Person for the 2025 conference.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/ncc-team.jpg",
+        alt: "Muhammad Al-amin Yusha'u with members of the Northern Creatives Conference team",
+        caption:
+          "With members of the Northern Creatives Conference team at the 2025 gathering in Kano.",
+      },
+      {
+        src: "/assets/ncc-wonderwise.jpg",
+        alt: "Muhammad Al-amin Yusha'u with members of Wonderwise Productions",
+        caption:
+          "With Wonderwise Productions, one of the Kaduna creative-sector partners I brought into the conference network.",
+      },
+    ],
+    links: [
+      {
+        label: "Visit Northern Creatives Conference",
+        href: "https://ncc.sparklabhub.com/",
+      },
+      {
+        label: "Visit Wonderwise Productions",
+        href: "https://www.wonderwise.ng/",
+      },
+    ],
+  },
+  {
     slug: "editorial-work",
     title: "The Revue and Aké Review",
     period: "2022 - 2023",
@@ -147,10 +224,17 @@ export const projects: Project[] = [
       "Original fiction, non-fiction and cultural features",
       "Research translated for public audiences",
     ],
-    hero: "/assets/ake-good-old-days.jpg",
-    heroAlt: "The printed Good Old Days page in Aké Review 2023",
+    hero: "/assets/ake-rev-2023.jpg",
+    heroAlt: "Cover of Aké Review Volume X, published in 2023",
     accent: "ochre",
     images: [
+      {
+        src: "/assets/ake-rev-2023.jpg",
+        alt: "Cover of Aké Review Volume X, published in 2023",
+        caption:
+          "Aké Review Volume X, where Good Old Days was published in print.",
+        fit: "contain",
+      },
       {
         src: "/assets/revue-2022-cover.png",
         alt: "Cover of The Revue 2022",
@@ -304,7 +388,7 @@ export const experience = [
     role: "Kaduna State Focal Person and Rapporteur",
     place: "Northern Creatives Conference",
     detail:
-      "Built and managed a stakeholder pipeline spanning more than 100 government, media and creative-sector contacts.",
+      "Built a 100+ stakeholder pipeline, coordinated Kaduna partnerships including Wonderwise Productions and documented the conference as rapporteur.",
   },
   {
     period: "2022 - 2024",

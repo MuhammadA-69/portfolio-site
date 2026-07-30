@@ -5,6 +5,26 @@ import { SignalField } from "./components/SignalField";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import { experience, projects, recognition } from "./portfolio-data";
+import { sitePath } from "./site-path";
+
+const evidence = [
+  {
+    value: "3",
+    label: "languages on KAFART's public website",
+  },
+  {
+    value: "100+",
+    label: "stakeholders tracked for NCC 2025",
+  },
+  {
+    value: "4",
+    label: "countries represented in the first youth committee",
+  },
+  {
+    value: "4.80",
+    label: "CGPA out of 5.00 in Cyber Security",
+  },
+];
 
 export default function Home() {
   return (
@@ -13,7 +33,10 @@ export default function Home() {
       <main>
         <section className="hero page-shell">
           <div className="hero-copy">
-            <h1>Muhammad Al-amin Yusha&apos;u</h1>
+            <h1>
+              <span>Muhammad</span>
+              <span>Al-amin Yusha&apos;u</span>
+            </h1>
             <p className="hero-statement">
               I build the systems and stories that move cultural work into
               public life.
@@ -40,7 +63,7 @@ export default function Home() {
           </div>
           <figure className="hero-portrait">
             <img
-              src="/assets/portrait.jpg"
+              src={sitePath("/assets/portrait.jpg")}
               alt="Portrait of Muhammad Al-amin Yusha'u"
             />
             <figcaption>
@@ -70,8 +93,8 @@ export default function Home() {
             <div className="signal-wrap">
               <SignalField />
               <p>
-                A live field of points inspired by the movement between
-                research, programmes, publics and systems.
+                Two signals move through interference, find a shared rhythm and
+                resolve into one clear line.
               </p>
             </div>
           </div>
@@ -81,7 +104,7 @@ export default function Home() {
           <div className="section-heading">
             <h2>Selected work</h2>
             <p>
-              Five projects that show how I think, coordinate and communicate.
+              Projects that show how I think, coordinate and communicate.
             </p>
             <Link className="text-link" href="/work">
               View all work <span aria-hidden="true">↗</span>
@@ -94,24 +117,25 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="evidence-band">
-          <div className="page-shell evidence-grid">
-            <div>
-              <strong>3</strong>
-              <span>languages on KAFART&apos;s public website</span>
-            </div>
-            <div>
-              <strong>100+</strong>
-              <span>stakeholders tracked for NCC 2025</span>
-            </div>
-            <div>
-              <strong>4</strong>
-              <span>countries represented in the first youth committee</span>
-            </div>
-            <div>
-              <strong>4.80</strong>
-              <span>CGPA out of 5.00 in Cyber Security</span>
-            </div>
+        <section
+          className="evidence-band evidence-marquee"
+          aria-label="Selected portfolio statistics"
+        >
+          <div className="evidence-track">
+            {[0, 1].map((setIndex) => (
+              <div
+                className="evidence-set"
+                key={setIndex}
+                aria-hidden={setIndex === 1 ? "true" : undefined}
+              >
+                {evidence.map((item) => (
+                  <div key={`${setIndex}-${item.value}`}>
+                    <strong>{item.value}</strong>
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -128,23 +152,29 @@ export default function Home() {
           </div>
           <div className="revue-shelf">
             <figure className="page-preview page-preview-small">
-              <img src="/assets/revue-2022-cover.png" alt="The Revue 2022 cover" />
+              <img
+                src={sitePath("/assets/revue-2022-cover.png")}
+                alt="The Revue 2022 cover"
+              />
               <figcaption>2022 cover</figcaption>
             </figure>
             <figure className="page-preview page-preview-tall">
               <img
-                src="/assets/revue-2022-credits.png"
+                src={sitePath("/assets/revue-2022-credits.png")}
                 alt="The Revue 2022 credits page"
               />
               <figcaption>Associate Articles Editor</figcaption>
             </figure>
             <figure className="page-preview page-preview-small">
-              <img src="/assets/revue-2023-cover.png" alt="The Revue 2023 cover" />
+              <img
+                src={sitePath("/assets/revue-2023-cover.png")}
+                alt="The Revue 2023 cover"
+              />
               <figcaption>2023 cover</figcaption>
             </figure>
             <figure className="page-preview page-preview-tall">
               <img
-                src="/assets/revue-2023-feature-1.png"
+                src={sitePath("/assets/revue-2023-feature-1.png")}
                 alt="A Revue 2023 feature on Tuareg material culture"
               />
               <figcaption>Research translated for readers</figcaption>
@@ -196,7 +226,7 @@ export default function Home() {
             </ol>
             <figure className="fellowship-proof">
               <img
-                src="/assets/better-futures-fellows.png"
+                src={sitePath("/assets/better-futures-fellows.png")}
                 alt="Better Futures Fellowship names and faces page including Muhammad Al-amin Yusha'u"
               />
               <figcaption>

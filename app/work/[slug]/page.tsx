@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
 import { projects } from "../../portfolio-data";
+import { sitePath } from "../../site-path";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -41,7 +44,9 @@ export default async function ProjectPage({
     <>
       <SiteHeader />
       <main>
-        <section className={`case-hero accent-${project.accent}`}>
+        <section
+          className={`case-hero accent-${project.accent} case-hero-${project.slug}`}
+        >
           <div className="page-shell case-hero-grid">
             <div>
               <Link className="back-link" href="/work">
@@ -54,7 +59,7 @@ export default async function ProjectPage({
                 <span>{project.discipline}</span>
               </div>
             </div>
-            <img src={project.hero} alt={project.heroAlt} />
+            <img src={sitePath(project.hero)} alt={project.heroAlt} />
           </div>
         </section>
 
@@ -107,7 +112,7 @@ export default async function ProjectPage({
               key={`${image.src}-${index}`}
               className={image.fit === "contain" ? "gallery-contain" : ""}
             >
-              <img src={image.src} alt={image.alt} />
+              <img src={sitePath(image.src)} alt={image.alt} />
               <figcaption>{image.caption}</figcaption>
             </figure>
           ))}

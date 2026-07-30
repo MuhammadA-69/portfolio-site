@@ -3,6 +3,61 @@ import type { Metadata } from "next";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 import { experience, recognition } from "../portfolio-data";
+import { sitePath } from "../site-path";
+
+const skills = [
+  {
+    title: "Strategic communications",
+    detail:
+      "Communication planning, institutional voice, campaign development and public-facing narratives.",
+  },
+  {
+    title: "Social media management",
+    detail:
+      "Content calendars, platform-specific copy, community engagement, event coverage and campaign coordination.",
+  },
+  {
+    title: "Visual design and brand identity",
+    detail:
+      "Brand systems, campaign assets, publication layouts and digital or print communication materials.",
+  },
+  {
+    title: "Editorial development",
+    detail:
+      "Editing, copywriting, research translation, reports and long-form cultural publishing.",
+  },
+  {
+    title: "Cultural programming",
+    detail:
+      "Exhibition development, curatorial coordination, thematic framing and programme delivery.",
+  },
+  {
+    title: "Research and reporting",
+    detail:
+      "Desk research, stakeholder mapping, evidence synthesis and post-programme documentation.",
+  },
+  {
+    title: "Engagement and facilitation",
+    detail:
+      "Youth engagement, community outreach, workshops, panels and cross-cultural remote sessions.",
+  },
+  {
+    title: "Web and content systems",
+    detail:
+      "Website structure, multilingual publishing, archives, directories, forms and content workflows.",
+  },
+];
+
+const tools = [
+  "Airtable",
+  "Google Sheets",
+  "Google Docs, Slides and Drive",
+  "Canva",
+  "Website content management",
+  "Social publishing and analytics",
+  "Zoom and Mentimeter",
+  "Microsoft Office",
+];
 
 export const metadata: Metadata = {
   title: "About",
@@ -35,12 +90,10 @@ export default function AboutPage() {
           </div>
           <figure>
             <img
-              src="/assets/kafart-hands-of-resilience.jpg"
-              alt="Muhammad speaking with visitors at an exhibition"
+              src={sitePath("/assets/about-headshot.jpg")}
+              alt="Portrait of Muhammad Al-amin Yusha'u"
             />
-            <figcaption>
-              Speaking with visitors during Hands of Resilience, Kaduna, 2023.
-            </figcaption>
+            <figcaption>Muhammad Al-amin Yusha&apos;u.</figcaption>
           </figure>
         </section>
 
@@ -62,9 +115,41 @@ export default function AboutPage() {
               that arrive when a cultural organisation becomes a data holder.
             </p>
             <p>
-              I work in English and Hausa, and speak Baruba as my mother
-              tongue. I am based in Abuja, Nigeria.
+              I work in English and Hausa. I am based in Abuja, Nigeria.
             </p>
+          </div>
+        </section>
+
+        <section
+          className="page-shell skills-tools-section section-block"
+          aria-labelledby="skills-tools-heading"
+        >
+          <div className="skills-tools-intro">
+            <h2 id="skills-tools-heading">Skills and tools</h2>
+            <p>
+              My work moves between strategy, design, publishing and delivery.
+              These are the capabilities and working systems I use to connect
+              those parts.
+            </p>
+          </div>
+          <div>
+            <div className="skills-grid">
+              {skills.map((skill, index) => (
+                <article key={skill.title}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{skill.title}</h3>
+                  <p>{skill.detail}</p>
+                </article>
+              ))}
+            </div>
+            <div className="tools-list">
+              <h3>Tools and systems</h3>
+              <ul>
+                {tools.map((tool) => (
+                  <li key={tool}>{tool}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -150,7 +235,7 @@ export default function AboutPage() {
           </div>
           <figure>
             <img
-              src="/assets/better-futures-fellows.png"
+              src={sitePath("/assets/better-futures-fellows.png")}
               alt="Better Futures Fellowship cohort page including Muhammad"
             />
             <figcaption>

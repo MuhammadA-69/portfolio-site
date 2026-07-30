@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import type { Project } from "../portfolio-data";
+import { sitePath } from "../site-path";
 
 export function ProjectCard({
   project,
@@ -16,7 +17,7 @@ export function ProjectCard({
       }`}
     >
       <Link href={`/work/${project.slug}`} className="project-image-link">
-        <img src={project.hero} alt={project.heroAlt} />
+        <img src={sitePath(project.hero)} alt={project.heroAlt} />
       </Link>
       <div className="project-card-copy">
         <div className="project-card-meta">

@@ -19,6 +19,14 @@ npm run lint
 npm test
 ```
 
-The site is built with Next.js, React and vinext for deployment through Sites.
-Selected project evidence is stored in `public/assets`, and the downloadable CV
-is stored in `public/downloads`.
+## GitHub Pages
+
+The site is a static Next.js export. Pushing the `main` branch runs
+`.github/workflows/deploy-pages.yml`, builds the site into `out`, and publishes
+that directory to GitHub Pages.
+
+In the GitHub repository, open **Settings → Pages** and set **Source** to
+**GitHub Actions** before the first deployment.
+
+Selected project evidence is stored in `public/assets`, and the downloadable
+CV is stored in `public/downloads`.

@@ -15,10 +15,8 @@
 
 # next.js
 /.next/
-/.vinext/
 /out/
 /dist/
-/.wrangler/
 
 # misc
 .DS_Store
@@ -32,6 +30,7 @@ yarn-error.log*
 
 # source material and local research
 /books/
+/images/
 /tmp/
 
 # unused starter examples
@@ -45,7 +44,5 @@ yarn-error.log*
 
 # typescript
 next-env.d.ts
-/dist/
-/.wrangler/
 /outputs/
 /work/
