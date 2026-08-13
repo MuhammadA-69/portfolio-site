@@ -104,7 +104,7 @@ export default function AboutPage() {
           <div className="prose">
             <p>
               Alongside cultural work, I am completing a BSc in Cyber Security
-              at the Air Force Institute of Technology with a 4.80/5.00 CGPA.
+              at the Air Force Institute of Technology with a 4.83/5.00 CGPA.
               My thesis examines gradient-based detection of low-variance data
               poisoning in large-language-model fine-tuning.
             </p>

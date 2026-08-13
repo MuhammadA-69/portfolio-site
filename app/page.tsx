@@ -21,7 +21,7 @@ const evidence = [
     label: "countries represented in the first youth committee",
   },
   {
-    value: "4.80",
+    value: "4.83",
     label: "CGPA out of 5.00 in Cyber Security",
   },
 ];
@@ -58,7 +58,7 @@ export default function Home() {
             <div className="hero-facts">
               <span>Abuja, Nigeria</span>
               <span>Strategic Communications Lead, KAFART</span>
-              <span>BSc Cyber Security, 4.80/5.00</span>
+              <span>BSc Cyber Security, 4.83/5.00</span>
             </div>
           </div>
           <figure className="hero-portrait">
