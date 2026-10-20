@@ -44,6 +44,37 @@ figcaption { color: var(--ink-soft); font-size: 14px; line-height: 1.5; padding-
 .button-light,.button-dark { color: #141414; background: linear-gradient(115deg, #ffffd4, #d9e7b1); border-color: transparent; }
 .button-ghost-light,.button-line { background: #14141455; }
 .button:active { transform: translateY(1px); }
+/* A diagonal sweep keeps the label above the fill, without shifting the button. */
+:is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --button-hover-fill: #45483b;
+}
+:is(.button-light, .button-dark, .diagonal-fill-light, .work-filters button[aria-pressed="true"]) {
+  --button-hover-fill: #e7b596;
+}
+:is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--button-hover-fill);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  transition: clip-path 550ms cubic-bezier(.22, 1, .36, 1);
+}
+@media (hover: hover) {
+  :is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close):not(:disabled):hover::before {
+    clip-path: polygon(0 0, 200% 0, 0 200%);
+  }
+}
+:is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close):not(:disabled):focus-visible::before {
+  clip-path: polygon(0 0, 200% 0, 0 200%);
+}
+html[data-motion="paused"] :is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close)::before {
+  transition: none;
+}
 .shader-backdrop { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; background: var(--warm-field); }
 .shader-backdrop:not([data-rendered]) { visibility: hidden; }
 

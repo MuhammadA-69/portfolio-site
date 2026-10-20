@@ -50,7 +50,7 @@ export default function Home() {
               for audiences far beyond it.
             </p>
             <div className={styles.actions}>
-              <Link className={styles.primaryAction} href="/work">
+              <Link className={`${styles.primaryAction} diagonal-fill diagonal-fill-light`} href="/work">
                 Explore selected work
                 <span aria-hidden="true">↗</span>
               </Link>
