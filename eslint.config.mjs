@@ -13,6 +13,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "tmp/**",
+    ".taste-skill/**",
+    // Vendored, user-supplied Annnimate source; the typed wrapper is linted.
+    "app/components/annnimate/**",
     "next-env.d.ts",
   ]),
 ]);

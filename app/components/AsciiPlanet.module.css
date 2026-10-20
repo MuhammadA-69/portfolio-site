@@ -1,0 +1,12 @@
+.world { margin: 0; background: var(--paper); color: var(--ink); min-width: 0; }
+.stage { position: relative; display: block; width: 100%; aspect-ratio: 1 / 1.06; padding: 0; overflow: clip; border: 0; background: transparent; color: inherit; cursor: pointer; }
+.canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.atmosphere { opacity: .42; mask-image: radial-gradient(ellipse at center, #000 15%, transparent 72%); }
+.still { position: absolute; inset: 0; display: grid; place-content: center; margin: 0; font: clamp(5px, .65vw, 11px)/1.2 ui-monospace, monospace; } /* taste-skill-ignore: fixed-width, no-JS ASCII illustration; not interface text. */
+.hidden { visibility: hidden; }
+.caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 24px 20px; font-size: 14px; }
+.pause { min-height: 44px; min-width: 52px; padding: 8px; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 5px; }
+.stage:focus-visible { outline: 3px solid var(--ink); outline-offset: -7px; }
+.stage:active { opacity: .94; }
+@media (max-width: 820px) { .stage { aspect-ratio: 1.45; } .still { font-size: 7px; } .caption { padding-inline: 20px; } }
+@media (max-width: 380px) { .caption { font-size: 13px; padding-inline: 14px; gap: 8px; } }

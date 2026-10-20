@@ -4,6 +4,7 @@ import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 import { experience, recognition } from "../portfolio-data";
 import { sitePath } from "../site-path";
+import { ShaderBackdrop } from "../components/ShaderBackdrop";
 
 const skills = [
   {
@@ -62,7 +63,7 @@ const tools = [
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Muhammad Al-amin Yusha'u, strategic communications lead, cultural programmer and Cyber Security graduate.",
+    "About Muhammad Al-amin Yusha'u, strategic communications lead, cultural programmer and BSc Cyber Security student.",
 };
 
 export default function AboutPage() {
@@ -72,7 +73,7 @@ export default function AboutPage() {
       <main>
         <section className="about-hero page-shell">
           <div>
-            <h1>Communications is where I ended up because culture needed me there.</h1>
+            <h1>Culture meets systems.</h1>
             <p>
               I currently serve as Strategic Communications Lead at KAFART, a
               cultural platform working with artists, designers, researchers,
@@ -89,6 +90,7 @@ export default function AboutPage() {
             </p>
           </div>
           <figure>
+            <ShaderBackdrop variant={0.35} />
             <img
               src={sitePath("/assets/about-headshot.jpg")}
               alt="Portrait of Muhammad Al-amin Yusha'u"
@@ -99,7 +101,7 @@ export default function AboutPage() {
 
         <section className="page-shell profile-grid section-block">
           <div>
-            <h2>Culture, systems and technical depth</h2>
+            <h2>A technical lens</h2>
           </div>
           <div className="prose">
             <p>
@@ -134,9 +136,8 @@ export default function AboutPage() {
           </div>
           <div>
             <div className="skills-grid">
-              {skills.map((skill, index) => (
+              {skills.map((skill) => (
                 <article key={skill.title}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
                   <h3>{skill.title}</h3>
                   <p>{skill.detail}</p>
                 </article>
@@ -178,7 +179,7 @@ export default function AboutPage() {
         <section className="learning-section">
           <div className="page-shell learning-grid">
             <div>
-              <h2>People and communities I have learned beside</h2>
+              <h2>Learning together</h2>
               <p>
                 Institutions matter, but so do the people who model a rigorous
                 way of working. My practice has been shaped through close work
@@ -196,20 +197,6 @@ export default function AboutPage() {
                 </p>
               </article>
               <article>
-                <h3>Aisha Aliyu-Bima</h3>
-                <p>
-                  Curator of Abuja Art Fair and inaugural Koyo Kouoh Fellow. I
-                  support her through curatorial research, programme
-                  coordination and communications.
-                </p>
-                <a
-                  className="text-link"
-                  href="https://www.theartnewspaper.com/2026/06/16/the-basel-legacy-of-the-late-venice-biennale-curator-koyo-kouoh"
-                >
-                  Read about the fellowship <span aria-hidden="true">↗</span>
-                </a>
-              </article>
-              <article>
                 <h3>TJ Benson</h3>
                 <p>
                   Writer and mentor during my two cycles with the Yasmin
@@ -223,15 +210,14 @@ export default function AboutPage() {
 
         <section className="page-shell section-block credentials-section">
           <div>
-            <h2>Selected recognition</h2>
-            <ol>
-              {recognition.map((item, index) => (
+            <h2>Recognition</h2>
+            <ul>
+              {recognition.map((item) => (
                 <li key={item}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
                   {item}
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
           <figure>
             <img
@@ -246,7 +232,7 @@ export default function AboutPage() {
         </section>
 
         <section className="page-shell about-contact">
-          <h2>Open to cultural, communications and research collaborations.</h2>
+          <h2>Let&apos;s work together.</h2>
           <p>
             <a href="mailto:alaminyushau234@gmail.com">
               alaminyushau234@gmail.com

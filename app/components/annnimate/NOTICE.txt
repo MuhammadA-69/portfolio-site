@@ -1,0 +1,11 @@
+ASCII Overlay by Annnimate / Good Fella.
+Source: user-supplied annnimate-starter-pack.zip, October 2026.
+https://annnimate.com/animations/ascii-overlay
+
+The supplied README states: "16 free components from the Annnimate library,
+yours to use in any project. No attribution, no expiry."
+
+Local changes: retain the original photograph while the shader loads; render
+before revealing the canvas; do not change global GSAP lag-smoothing settings.
+The portfolio wrapper lazy-loads this effect, unmounts it when off screen,
+and uses the original image when reduced motion is requested or WebGL fails.

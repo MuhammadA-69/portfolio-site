@@ -6,6 +6,8 @@ import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
 import { projects } from "../../portfolio-data";
 import { sitePath } from "../../site-path";
+import { CaseGallery } from "../../components/CaseGallery";
+import { ShaderBackdrop } from "../../components/ShaderBackdrop";
 
 export const dynamicParams = false;
 
@@ -47,12 +49,13 @@ export default async function ProjectPage({
         <section
           className={`case-hero accent-${project.accent} case-hero-${project.slug}`}
         >
+          <ShaderBackdrop variant={projectIndex / projects.length} material={projectIndex + 1} />
           <div className="page-shell case-hero-grid">
             <div>
               <Link className="back-link" href="/work">
                 ← All work
               </Link>
-              <h1>{project.title}</h1>
+              <h1>{({ "subject-to-climate": "Youth, climate & stories", "northern-creatives-conference": "Northern creatives", "editorial-work": "The Revue & Aké Review" } as Record<string, string>)[project.slug] ?? project.title}</h1>
               <p className="case-lead">{project.lead}</p>
               <div className="case-meta">
                 <span>{project.period}</span>
@@ -96,9 +99,8 @@ export default async function ProjectPage({
           <div className="page-shell case-evidence">
             <h2>Evidence at a glance</h2>
             <div>
-              {project.evidence.map((item, index) => (
+              {project.evidence.map((item) => (
                 <p key={item}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
                   {item}
                 </p>
               ))}
@@ -106,17 +108,7 @@ export default async function ProjectPage({
           </div>
         </section>
 
-        <section className="page-shell case-gallery section-block">
-          {project.images.map((image, index) => (
-            <figure
-              key={`${image.src}-${index}`}
-              className={image.fit === "contain" ? "gallery-contain" : ""}
-            >
-              <img src={sitePath(image.src)} alt={image.alt} />
-              <figcaption>{image.caption}</figcaption>
-            </figure>
-          ))}
-        </section>
+        <CaseGallery images={project.images} />
 
         <section className="next-project page-shell">
           <p>Next case study</p>

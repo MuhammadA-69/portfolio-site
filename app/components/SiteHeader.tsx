@@ -1,18 +1,37 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { sitePath } from "../site-path";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!menuOpen) return;
 
     const previousOverflow = document.body.style.overflow;
+    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const background = [...document.querySelectorAll<HTMLElement>("main, footer")]
+      .map((element) => ({ element, inert: element.inert }));
+    background.forEach(({ element }) => { element.inert = true; });
+    const focusable = () => [...(menuRef.current?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled])',
+    ) ?? [])].filter((element) => element.tabIndex >= 0);
+    menuRef.current?.querySelector<HTMLButtonElement>(".mobile-menu-close")?.focus();
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setMenuOpen(false);
+      if (event.key === "Tab") {
+        const controls = focusable();
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault(); last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault(); first?.focus();
+        }
+      }
     };
     const closeOnDesktop = () => {
       if (window.innerWidth > 820) setMenuOpen(false);
@@ -24,6 +43,8 @@ export function SiteHeader() {
 
     return () => {
       document.body.style.overflow = previousOverflow;
+      background.forEach(({ element, inert }) => { element.inert = inert; });
+      if (previouslyFocused?.getClientRects().length) previouslyFocused.focus();
       window.removeEventListener("keydown", closeOnEscape);
       window.removeEventListener("resize", closeOnDesktop);
     };
@@ -58,8 +79,12 @@ export function SiteHeader() {
         <span />
       </button>
       <div
+        ref={menuRef}
         className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}
         id="mobile-menu"
+        role="dialog"
+        aria-modal={menuOpen ? true : undefined}
+        aria-label="Site navigation"
         aria-hidden={!menuOpen}
       >
         <div className="mobile-menu-top">

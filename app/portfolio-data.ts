@@ -363,13 +363,6 @@ export const projects: Project[] = [
 
 export const experience = [
   {
-    period: "2026",
-    role: "Curatorial Assistant",
-    place: "Abuja Art Fair",
-    detail:
-      "Supporting curator Aisha Aliyu-Bima with research, programme coordination, communications and documentation.",
-  },
-  {
     period: "2023 - now",
     role: "Strategic Communications Lead",
     place: "KAFART",

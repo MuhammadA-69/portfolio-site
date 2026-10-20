@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ProjectCard } from "../components/ProjectCard";
+import { WorkCollection } from "../components/WorkCollection";
+import { ShaderBackdrop } from "../components/ShaderBackdrop";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 import { projects } from "../portfolio-data";
@@ -16,6 +17,7 @@ export default function WorkPage() {
       <SiteHeader />
       <main>
         <section className="inner-hero page-shell">
+          <ShaderBackdrop variant={0.25} />
           <h1>Selected work</h1>
           <p>
             Work at the intersection of cultural institutions, public
@@ -23,11 +25,7 @@ export default function WorkPage() {
             study names the contribution, the evidence and the limits.
           </p>
         </section>
-        <section className="page-shell work-index">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} featured={index === 0} />
-          ))}
-        </section>
+        <WorkCollection projects={projects} />
       </main>
       <SiteFooter />
     </>

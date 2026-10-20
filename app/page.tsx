@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { ProjectCard } from "./components/ProjectCard";
-import { SignalField } from "./components/SignalField";
+import { AsciiPlanet } from "./components/AsciiPlanet";
+import { ShaderBackdrop } from "./components/ShaderBackdrop";
+import { WorkShowcase } from "./components/WorkShowcase";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import { experience, projects, recognition } from "./portfolio-data";
 import { sitePath } from "./site-path";
+import styles from "./HomePage.module.css";
 
 const evidence = [
   {
@@ -30,54 +32,48 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main>
-        <section className="hero page-shell">
-          <div className="hero-copy">
+      <main className={styles.page}>
+        <section className={styles.hero}>
+          <div className={styles.heroCopy}>
             <h1>
-              <span>Muhammad</span>
+              <span>Muhammad</span>{" "}
               <span>Al-amin Yusha&apos;u</span>
             </h1>
-            <p className="hero-statement">
+            <p className={styles.statement}>
               I build the systems and stories that move cultural work into
               public life.
             </p>
-            <p className="hero-intro">
+            <p className={styles.intro}>
               I am a strategic communications lead working across cultural
               programming, research, public engagement and responsible
               technology. My practice is rooted in Northern Nigeria and built
               for audiences far beyond it.
             </p>
-            <div className="hero-actions">
-              <Link className="button button-dark" href="/work">
+            <div className={styles.actions}>
+              <Link className={styles.primaryAction} href="/work">
                 Explore selected work
+                <span aria-hidden="true">↗</span>
               </Link>
-              <a className="button button-line" href="mailto:alaminyushau234@gmail.com">
+              <a className={styles.emailAction} href="mailto:alaminyushau234@gmail.com">
                 Email me
               </a>
             </div>
-            <div className="hero-facts">
-              <span>Abuja, Nigeria</span>
-              <span>Strategic Communications Lead, KAFART</span>
-              <span>BSc Cyber Security, 4.83/5.00</span>
+            <div className={styles.identity}>
+              <Link href="/about" aria-label="About Muhammad Al-amin Yusha'u">
+                <img src={sitePath("/assets/portrait.jpg")} width={80} height={80}
+                  alt="Portrait of Muhammad Al-amin Yusha'u" />
+              </Link>
+              <p>Rooted in Northern Nigeria.<br />Working across culture and technology.</p>
             </div>
+            <p className={styles.facts}>Abuja, Nigeria <span>BSc Cyber Security, 4.83/5.00</span></p>
           </div>
-          <figure className="hero-portrait">
-            <img
-              src={sitePath("/assets/portrait.jpg")}
-              alt="Portrait of Muhammad Al-amin Yusha'u"
-            />
-            <figcaption>
-              Communications strategist
-              <br />
-              Arts, culture and technology
-            </figcaption>
-          </figure>
+          <div className={styles.heroWorld}><AsciiPlanet /></div>
         </section>
 
         <section className="practice-section">
           <div className="page-shell practice-grid">
             <div className="practice-copy">
-              <h2>A practice shaped by connection</h2>
+              <h2>Connection, in practice</h2>
               <p>
                 A programme needs a public language. Research needs a form
                 people can enter. Technology needs context and care. My work
@@ -90,32 +86,11 @@ export default function Home() {
                 <span>Responsible technology</span>
               </div>
             </div>
-            <div className="signal-wrap">
-              <SignalField />
-              <p>
-                Two signals move through interference, find a shared rhythm and
-                resolve into one clear line.
-              </p>
-            </div>
           </div>
         </section>
 
-        <section className="page-shell section-block">
-          <div className="section-heading">
-            <h2>Selected work</h2>
-            <p>
-              Projects that show how I think, coordinate and communicate.
-            </p>
-            <Link className="text-link" href="/work">
-              View all work <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-          <div className="featured-grid">
-            <ProjectCard project={projects[0]} featured />
-            <ProjectCard project={projects[1]} />
-            <ProjectCard project={projects[2]} />
-          </div>
-        </section>
+        <WorkShowcase projects={projects.slice(0, 3).map(({ slug, title, period, lead, hero, heroAlt }) =>
+          ({ slug, title, period, lead, hero, heroAlt }))} />
 
         <section
           className="evidence-band evidence-marquee"
@@ -141,7 +116,7 @@ export default function Home() {
 
         <section className="page-shell section-block revue-section">
           <div className="section-heading">
-            <h2>Pages that became an archive</h2>
+            <h2>Pages into an archive</h2>
             <p>
               The Revue gave volunteer research, cultural reporting and
               original writing a durable editorial form.
@@ -184,7 +159,7 @@ export default function Home() {
 
         <section className="page-shell section-block timeline-section">
           <div className="section-heading">
-            <h2>Current and recent roles</h2>
+            <h2>Where I work</h2>
             <p>
               Communications is where I began. Coordination, research and
               infrastructure are what the work required next.
@@ -210,20 +185,19 @@ export default function Home() {
         <section className="recognition-section">
           <div className="page-shell recognition-grid">
             <div>
-              <h2>Selected recognition and learning communities</h2>
+              <h2>Learning communities</h2>
               <p>
                 The fellowships and communities that have sharpened how I think
                 about culture, technology, leadership and public work.
               </p>
             </div>
-            <ol>
-              {recognition.map((item, index) => (
+            <ul>
+              {recognition.map((item) => (
                 <li key={item}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
                   {item}
                 </li>
               ))}
-            </ol>
+            </ul>
             <figure className="fellowship-proof">
               <img
                 src={sitePath("/assets/better-futures-fellows.png")}
@@ -238,8 +212,9 @@ export default function Home() {
         </section>
 
         <section className="contact-section page-shell">
+          <ShaderBackdrop variant={0.85} />
           <p>Have a programme, institution or idea that needs a clearer public life?</p>
-          <h2>Let&apos;s make the work legible, useful and lasting.</h2>
+          <h2>Let&apos;s make it public.</h2>
           <div className="contact-actions">
             <a className="button button-light" href="mailto:alaminyushau234@gmail.com">
               alaminyushau234@gmail.com
