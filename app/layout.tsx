@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import { sitePath } from "./site-path";
 import "./globals.css";
+import "./interactions.css";
+import "./components/CaseGallery.css";
+import { ScrollEffects } from "./components/ScrollEffects";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -55,6 +58,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={archivo.variable}>
         {children}
+        <ScrollEffects />
       </body>
     </html>
   );

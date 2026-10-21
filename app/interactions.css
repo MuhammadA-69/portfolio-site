@@ -1,0 +1,114 @@
+/* Liquid glass is an explicit owner request. Keep text on a stable contrast layer. */
+.header-spacer { height: 104px; }
+.site-header {
+  position: fixed;
+  z-index: 60;
+  top: 16px;
+  left: 0;
+  right: 0;
+  width: min(1400px, calc(100% - 2 * var(--page-gutter)));
+  height: 72px;
+  padding-inline: 22px;
+  border: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  isolation: isolate;
+}
+.site-header > .wordmark { justify-self: start; }
+.site-header > .header-contact { justify-self: end; color: var(--ink); }
+.site-header > nav { gap: 36px; align-items: center; }
+.site-header > nav a { padding: 12px 4px; }
+.dock-material {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 320px;
+  height: 64px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 22px;
+  background: #202020a6;
+  transition: width 600ms cubic-bezier(.22,1,.36,1), height 600ms cubic-bezier(.22,1,.36,1);
+}
+.site-header-expanded .dock-material { width: 100%; height: 100%; }
+.dock-glass { pointer-events: none; }
+
+/* Shared glass material, with a bottom-to-top white hover sweep above it. */
+html body :is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close, .effects-control, .motion-toggle, .ascii-photo-toggle) {
+  background: linear-gradient(135deg, #ffffff1c, #ffffff06 55%, #ffffff10), #242424a6;
+  color: var(--ink);
+  border: 1px solid #ffffff30;
+  border-radius: 12px;
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow: inset 0 1px 0 #ffffff21, inset 0 -1px 0 #ffffff08;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+html body :is(.diagonal-fill-light, .button-light, .button-dark) { border-color: #ffffff73; }
+html body .work-filters button[aria-pressed="true"] { background: #fff; color: #141414; }
+@media (hover: hover) {
+  html body :is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close):not(:disabled):hover { color: #141414; border-color: #fff; }
+  html body :is(.effects-control, .motion-toggle, .ascii-photo-toggle):hover { color: #141414; background: #fff; }
+}
+html body :is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close):not(:disabled):focus-visible { color: #141414; border-color: #fff; }
+html body :is(.effects-control, .motion-toggle, .ascii-photo-toggle):focus-visible { color: #141414; background: #fff; }
+.effects-control { display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; margin-top: 12px; }
+.menu-toggle span { background: currentColor; }
+.viewport-fade {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: clamp(40px, 7vh, 76px);
+  pointer-events: none;
+  z-index: 30;
+  background: linear-gradient(to bottom, #14141400, #141414c4 85%, #141414);
+  transition: opacity 200ms ease;
+}
+.viewport-fade[data-hidden="true"], body:has(.mobile-menu-open) .viewport-fade { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .accordion-reveal {
+    transform-origin: top left;
+    clip-path: inset(0 0 85% 0);
+    transform: translateY(22px) scaleY(.9);
+    opacity: .2;
+    transition: clip-path 650ms cubic-bezier(.16,1,.3,1), transform 650ms cubic-bezier(.16,1,.3,1), opacity 450ms ease;
+  }
+  .accordion-reveal.accordion-visible { clip-path: inset(-8px); transform: none; opacity: 1; }
+}
+@media (max-width: 1050px) {
+  .site-header { padding-inline: 18px; }
+  .site-header > nav { gap: 26px; }
+  .dock-material { width: 270px; }
+}
+@media (max-width: 820px) {
+  .header-spacer { height: 88px; }
+  .site-header { top: 12px; height: 64px; padding-inline: 14px; grid-template-columns: 1fr auto; }
+  .site-header > nav, .site-header > .header-contact { display: none; }
+  .dock-material { width: 100%; height: 100%; }
+  .site-header .menu-toggle { width: 44px; height: 44px; border: 0; background: transparent; box-shadow: none; backdrop-filter: none; }
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 22px var(--page-gutter) max(24px, env(safe-area-inset-bottom));
+    visibility: hidden;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 400ms cubic-bezier(.76,0,.24,1), visibility 0s 400ms;
+  }
+  .mobile-menu-open { visibility: visible; pointer-events: auto; clip-path: inset(0); transition-delay: 0s; }
+  .mobile-menu > nav a { clip-path: inset(0 0 100% 0); transform: translateY(-20px); opacity: 0; transition: clip-path 450ms cubic-bezier(.22,1,.36,1), transform 450ms cubic-bezier(.22,1,.36,1), opacity 250ms; }
+  .mobile-menu-open > nav a { clip-path: inset(-6px); transform: none; opacity: 1; transition-delay: 120ms; }
+  .mobile-menu-open > nav a:nth-child(2) { transition-delay: 180ms; }
+  .mobile-menu-open > nav a:nth-child(3) { transition-delay: 240ms; }
+}
+html[data-motion="paused"] :is(.dock-material, .mobile-menu, .mobile-menu > nav a, .accordion-reveal, .viewport-fade) { transition: none; }
+html[data-motion="paused"] .accordion-reveal { clip-path: none; transform: none; opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .accordion-reveal { clip-path: none; transform: none; opacity: 1; }
+}
+@media (prefers-contrast: more), (prefers-reduced-transparency: reduce) {
+  .dock-material { background: #141414; }
+  html body :is(.button, .back-link, .diagonal-fill, .work-filters button, .effects-control, .motion-toggle) { background: #242424; backdrop-filter: none; }
+  .viewport-fade { display: none; }
+}

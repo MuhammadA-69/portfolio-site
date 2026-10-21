@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./AsciiPlanet.module.css";
 import { ShaderBackdrop } from "./ShaderBackdrop";
+import { MotionIcon } from "./MotionIcon";
 
 const glyphs = " .,:;=+*#%@";
 
@@ -198,10 +199,11 @@ export function AsciiPlanet() {
       </button>
       <figcaption className={styles.caption}>
         <span aria-live="polite">{greeted ? "A little curiosity goes a long way." : "Different worlds. A little closer."}</span>
-        <button type="button" className={styles.pause} aria-pressed={paused}
+        <button type="button" className={`${styles.pause} motion-toggle`} aria-pressed={paused}
           aria-label={paused ? "Resume planet animation" : "Pause planet animation"}
+          title={paused ? "Resume planet animation" : "Pause planet animation"}
           onClick={() => setPaused((value) => !value)}>
-          {paused ? "Play" : "Pause"}
+          <MotionIcon paused={paused} />
         </button>
       </figcaption>
     </figure>

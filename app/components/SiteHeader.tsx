@@ -2,11 +2,20 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { LiquidGlass } from "@aberhamm/liquid-glass-react";
 import { sitePath } from "../site-path";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    const update = () => setExpanded((current) => window.scrollY > (current ? 32 : 80));
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -53,9 +62,20 @@ export function SiteHeader() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
+    <>
+    <div className="header-spacer" aria-hidden="true" />
     <header
-      className={`site-header ${menuOpen ? "site-header-menu-open" : ""}`}
+      className={`site-header ${expanded ? "site-header-expanded" : ""} ${menuOpen ? "site-header-menu-open" : ""}`}
+      inert={menuOpen}
     >
+      <div className="dock-material" aria-hidden="true">
+        <LiquidGlass className="dock-glass" displacement displacementScale={24}
+          blurAmount={0.75} saturation={125} aberrationIntensity={0.4}
+          elasticity={0} cornerRadius={22} padding={0}
+          style={{ width: "100%", height: "100%" }}>
+          <span />
+        </LiquidGlass>
+      </div>
       <Link className="wordmark" href="/" aria-label="Muhammad Al-amin Yusha'u, home">
         M.A.Y.
       </Link>
@@ -78,6 +98,7 @@ export function SiteHeader() {
         <span />
         <span />
       </button>
+    </header>
       <div
         ref={menuRef}
         className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}
@@ -86,6 +107,7 @@ export function SiteHeader() {
         aria-modal={menuOpen ? true : undefined}
         aria-label="Site navigation"
         aria-hidden={!menuOpen}
+        inert={!menuOpen}
       >
         <div className="mobile-menu-top">
           <Link
@@ -146,6 +168,6 @@ export function SiteHeader() {
           </a>
         </div>
       </div>
-    </header>
+    </>
   );
 }

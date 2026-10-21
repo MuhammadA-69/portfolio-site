@@ -76,7 +76,7 @@ test("the dark visual system has gradient and shader fallbacks without navy", as
   assert.match(css, /--paper: #141414/);
   assert.match(css, /linear-gradient/);
   assert.match(css, /prefers-reduced-motion/);
-  assert.doesNotMatch(css, /00002b|deep-blue|backdrop-filter/i);
+  assert.doesNotMatch(css, /00002b|deep-blue/i);
   const shader = await readFile(new URL("../app/components/ShaderBackdrop.tsx", import.meta.url), "utf8");
   assert.match(shader, /getContext\("webgl"/);
   assert.match(shader, /portfolio-motion-change/);
@@ -85,4 +85,23 @@ test("the dark visual system has gradient and shader fallbacks without navy", as
   assert.match(shader, /contour=/);
   assert.match(shader, /ribbon=/);
   assert.match(shader, /circuit=/);
+});
+
+test("navigation and motion controls retain accessible static fallbacks", async () => {
+  const html = await readExport("index.html");
+  assert.match(html, /aria-controls="mobile-menu"/);
+  assert.match(html, /aria-label="Pause motion"/);
+  assert.match(html, /aria-label="Pause planet animation"/);
+  assert.match(html, /class="viewport-fade" data-hidden="true" aria-hidden="true"/);
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.contribution-list \{ list-style: disc outside/);
+});
+
+test("gallery arrows are labelled and omitted for single-image projects", async () => {
+  const kafart = await readExport("work/kafart/index.html");
+  assert.match(kafart, /aria-label="Previous image"/);
+  assert.match(kafart, /aria-label="Next image"/);
+  const budanza = await readExport("work/budanza/index.html");
+  assert.match(budanza, /image-dialog-single/);
+  assert.doesNotMatch(budanza, /aria-label="Next image"/);
 });
