@@ -60,6 +60,8 @@ export function AsciiPlanet() {
     let targetX = 0;
     let targetY = 0;
     let reduced = media.matches;
+    let touchPointer: number | null = null;
+    const stage = canvas.closest("button");
     const stopped = () => reduced || paused || document.documentElement.dataset.motion === "paused";
 
     function draw() {
@@ -151,10 +153,27 @@ export function AsciiPlanet() {
     }
 
     function onPointer(event: PointerEvent) {
-      if (event.pointerType === "touch" || stopped() || !visible || !canvas) return;
+      if (stopped() || !visible || !canvas) return;
+      if (event.pointerType === "touch" && event.pointerId !== touchPointer) return;
       const rect = canvas.getBoundingClientRect();
       targetX = Math.max(-1, Math.min(1, (event.clientX - rect.left - rect.width / 2) / (rect.width * 0.6)));
       targetY = Math.max(-1, Math.min(1, (event.clientY - rect.top - rect.height / 2) / (rect.height * 0.6)));
+    }
+
+    function onTouchStart(event: PointerEvent) {
+      if (event.pointerType !== "touch" || touchPointer !== null || stopped()) return;
+      touchPointer = event.pointerId;
+      onPointer(event);
+      // Give even a short tap a visible response before its click-triggered wink.
+      lookX = targetX;
+      lookY = targetY;
+      draw();
+    }
+
+    function onTouchEnd(event: PointerEvent) {
+      if (event.pointerId !== touchPointer) return;
+      touchPointer = null;
+      resetLook();
     }
 
     function onMotion() { reduced = media.matches; sync(); }
@@ -170,6 +189,9 @@ export function AsciiPlanet() {
     const intersection = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); });
     intersection.observe(canvas);
     window.addEventListener("pointermove", onPointer, { passive: true });
+    stage?.addEventListener("pointerdown", onTouchStart, { passive: true });
+    window.addEventListener("pointerup", onTouchEnd, { passive: true });
+    window.addEventListener("pointercancel", onTouchEnd, { passive: true });
     document.addEventListener("pointerleave", resetLook);
     document.addEventListener("visibilitychange", sync);
     media.addEventListener("change", onMotion);
@@ -181,6 +203,9 @@ export function AsciiPlanet() {
       observer.disconnect();
       intersection.disconnect();
       window.removeEventListener("pointermove", onPointer);
+      stage?.removeEventListener("pointerdown", onTouchStart);
+      window.removeEventListener("pointerup", onTouchEnd);
+      window.removeEventListener("pointercancel", onTouchEnd);
       document.removeEventListener("pointerleave", resetLook);
       document.removeEventListener("visibilitychange", sync);
       media.removeEventListener("change", onMotion);

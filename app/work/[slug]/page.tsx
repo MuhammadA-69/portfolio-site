@@ -87,7 +87,7 @@ export default async function ProjectPage({
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {link.label} <span aria-hidden="true">↗</span>
+                    {link.label}
                   </a>
                 ))}
               </div>
@@ -113,7 +113,7 @@ export default async function ProjectPage({
         <section className="next-project page-shell">
           <p>Next case study</p>
           <Link href={`/work/${nextProject.slug}`}>
-            {nextProject.title} <span aria-hidden="true">↗</span>
+            {nextProject.title}
           </Link>
         </section>
       </main>

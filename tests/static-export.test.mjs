@@ -56,7 +56,7 @@ test("the redesign retains the requested content and removes the superseded role
   for (const route of ["index.html", "about/index.html", "work/index.html"]) {
     const html = await readExport(route);
     assert.doesNotMatch(html, /Abuja Art Fair|Aisha Aliyu|live field of points|SignalField/i);
-    assert.match(html, /Pause motion/);
+    assert.doesNotMatch(html, /Pause motion|Resume motion|↗/);
     assert.match(html, /archivo/i);
   }
   const about = await readExport("about/index.html");
@@ -90,7 +90,7 @@ test("the dark visual system has gradient and shader fallbacks without navy", as
 test("navigation and motion controls retain accessible static fallbacks", async () => {
   const html = await readExport("index.html");
   assert.match(html, /aria-controls="mobile-menu"/);
-  assert.match(html, /aria-label="Pause motion"/);
+  assert.doesNotMatch(html, /aria-label="Pause motion"/);
   assert.match(html, /aria-label="Pause planet animation"/);
   assert.match(html, /class="viewport-fade" data-hidden="true" aria-hidden="true"/);
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");

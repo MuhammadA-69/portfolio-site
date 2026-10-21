@@ -69,8 +69,8 @@ export function SiteHeader() {
       inert={menuOpen}
     >
       <div className="dock-material" aria-hidden="true">
-        <LiquidGlass className="dock-glass" displacement displacementScale={24}
-          blurAmount={0.75} saturation={125} aberrationIntensity={0.4}
+        <LiquidGlass className="dock-glass" variant="clear" displacement displacementScale={38}
+          blurAmount={0.1} saturation={115} aberrationIntensity={2}
           elasticity={0} cornerRadius={22} padding={0}
           style={{ width: "100%", height: "100%" }}>
           <span />

@@ -22,7 +22,7 @@ export function CaseGallery({ images }: { images: ProjectImage[] }) {
       {images.map((image, index) => <figure key={`${image.src}-${index}`} className={image.fit === "contain" ? "gallery-contain" : ""}>
         <button type="button" aria-label={`Enlarge: ${image.caption}`} onClick={() => { setActive(index); dialog.current?.showModal(); setOpen(true); }}>
           <img src={sitePath(image.src)} alt={image.alt} loading="lazy" />
-          <span className="gallery-enlarge" aria-hidden="true">View image ↗</span>
+          <span className="gallery-enlarge" aria-hidden="true">View image</span>
         </button>
         <figcaption>{image.caption}</figcaption>
       </figure>)}

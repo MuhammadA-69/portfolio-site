@@ -52,7 +52,6 @@ export default function Home() {
             <div className={styles.actions}>
               <Link className={`${styles.primaryAction} diagonal-fill diagonal-fill-light`} href="/work">
                 Explore selected work
-                <span aria-hidden="true">↗</span>
               </Link>
               <a className={styles.emailAction} href="mailto:alaminyushau234@gmail.com">
                 Email me
@@ -122,7 +121,7 @@ export default function Home() {
               original writing a durable editorial form.
             </p>
             <Link className="text-link" href="/work/editorial-work">
-              Open the editorial case study <span aria-hidden="true">↗</span>
+              Open the editorial case study
             </Link>
           </div>
           <div className="revue-shelf">
@@ -165,7 +164,7 @@ export default function Home() {
               infrastructure are what the work required next.
             </p>
             <Link className="text-link" href="/about">
-              Read my full profile <span aria-hidden="true">↗</span>
+              Read my full profile
             </Link>
           </div>
           <div className="timeline">

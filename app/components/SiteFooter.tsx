@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { sitePath } from "../site-path";
-import { EffectsControl } from "./EffectsControl";
 
 export function SiteFooter() {
   return (
@@ -50,11 +49,9 @@ export function SiteFooter() {
         </a>
       </div>
       <p className="footer-note">
-        <EffectsControl />
-        <br />
         Abuja, Nigeria
         <br />
-        © {new Date().getFullYear()} Muhammad Al-amin Yusha&apos;u
+        © {new Date().getFullYear()}{" "}Muhammad Al-amin Yusha&apos;u
       </p>
     </footer>
   );

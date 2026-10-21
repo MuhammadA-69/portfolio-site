@@ -29,7 +29,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 22px;
-  background: #202020a6;
+  background: #14141438;
   transition: width 600ms cubic-bezier(.22,1,.36,1), height 600ms cubic-bezier(.22,1,.36,1);
 }
 .site-header-expanded .dock-material { width: 100%; height: 100%; }
@@ -37,15 +37,33 @@
 
 /* Shared glass material, with a bottom-to-top white hover sweep above it. */
 html body :is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close, .effects-control, .motion-toggle, .ascii-photo-toggle) {
-  background: linear-gradient(135deg, #ffffff1c, #ffffff06 55%, #ffffff10), #242424a6;
+  background: linear-gradient(135deg, #ffffff12, #ffffff00 45%, #ffffff07), #14141438;
   color: var(--ink);
   border: 1px solid #ffffff30;
   border-radius: 12px;
-  backdrop-filter: blur(14px) saturate(1.2);
-  -webkit-backdrop-filter: blur(14px) saturate(1.2);
-  box-shadow: inset 0 1px 0 #ffffff21, inset 0 -1px 0 #ffffff08;
+  backdrop-filter: blur(2px) saturate(1.15);
+  -webkit-backdrop-filter: blur(2px) saturate(1.15);
+  box-shadow: inset 0 1px 1px #ffffff42, inset 0 -1px 1px #ffffff12, 0 4px 16px #00000018;
   transition: color 180ms ease, border-color 180ms ease;
 }
+/* A thin optical rim: colour lives at the bevel, never behind the label.
+   Separate from ::before, which owns the accessible white hover fill. */
+.effects-control, .motion-toggle { position: relative; }
+.dock-material::after,
+html body :is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close, .effects-control, .motion-toggle, .ascii-photo-toggle)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(from 125deg, #ffffff18, #a4eaffb3 7%, #c5acff9e 12%, #ffb8d77a 17%, #ffffff18 24%, #ffffff08 43%, #fff3bca6 49%, #ffffffcc 53%, #b2f3ffad 58%, #d8b6ff8c 63%, #ffffff18 72%, #ffffff08);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+.dock-material::after { padding: 1.5px; }
 html body :is(.diagonal-fill-light, .button-light, .button-dark) { border-color: #ffffff73; }
 html body .work-filters button[aria-pressed="true"] { background: #fff; color: #141414; }
 @media (hover: hover) {
@@ -109,6 +127,8 @@ html[data-motion="paused"] .accordion-reveal { clip-path: none; transform: none;
 }
 @media (prefers-contrast: more), (prefers-reduced-transparency: reduce) {
   .dock-material { background: #141414; }
-  html body :is(.button, .back-link, .diagonal-fill, .work-filters button, .effects-control, .motion-toggle) { background: #242424; backdrop-filter: none; }
+  html body :is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close, .effects-control, .motion-toggle, .ascii-photo-toggle) { background: #242424; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .dock-material::after,
+  html body :is(.button, .back-link, .diagonal-fill, .work-filters button, .image-dialog button, .menu-toggle, .mobile-menu-close, .effects-control, .motion-toggle, .ascii-photo-toggle)::after { display: none; }
   .viewport-fade { display: none; }
 }

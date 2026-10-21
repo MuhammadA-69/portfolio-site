@@ -36,12 +36,12 @@ export function WorkShowcase({ projects }: { projects: Work[] }) {
                 <span className={styles.period}>{project.period}</span>
                 <h3>{labels[project.slug] ?? project.title}</h3>
                 <p>{project.lead}</p>
-                <span className={styles.open}>Open case study <span aria-hidden="true">↗</span></span>
+                <span className={styles.open}>Open case study</span>
               </Link>
             </article>
           ))}
         </div>
-        <Link className={styles.allWork} href="/work">All work <span aria-hidden="true">↗</span></Link>
+        <Link className={styles.allWork} href="/work">All work</Link>
       </div>
       <figure className={styles.preview}>
         <div className={`${styles.media} ${current.slug === "subject-to-climate" ? styles.landscape : ""}`}>

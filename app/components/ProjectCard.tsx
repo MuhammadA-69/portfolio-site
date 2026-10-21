@@ -29,7 +29,7 @@ export function ProjectCard({
         </h3>
         <p>{project.lead}</p>
         <Link className="text-link" href={`/work/${project.slug}`}>
-          Read the case study <span aria-hidden="true">↗</span>
+          Read the case study
         </Link>
       </div>
     </article>
