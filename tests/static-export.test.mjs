@@ -20,10 +20,11 @@ test("project pages are generated statically", async () => {
   assert.match(html, /All work/);
 });
 
-test("the interactive hero retains accessible controls and current profile details", async () => {
+test("fieldwork controls and current profile details are rendered", async () => {
   const html = await readExport("index.html");
-  assert.match(html, /Say hello to the ASCII planet/);
-  assert.match(html, /Pause planet animation/);
+  assert.match(html, /Explore fieldwork photographs/);
+  assert.match(html, /The exhibition/);
+  assert.match(html, /aria-pressed="true"/);
   assert.match(html, /4\.83\/5\.00/);
   assert.match(html, /muhammad-alamin-yushau-cv\.pdf/);
   assert.match(html, /northern-creatives-conference/);
@@ -57,7 +58,7 @@ test("the redesign retains the requested content and removes the superseded role
     const html = await readExport(route);
     assert.doesNotMatch(html, /Abuja Art Fair|Aisha Aliyu|live field of points|SignalField/i);
     assert.doesNotMatch(html, /Pause motion|Resume motion|↗/);
-    assert.match(html, /archivo/i);
+    assert.match(html, /GeistSerif/i);
   }
   const about = await readExport("about/index.html");
   assert.match(about, /Social media management/);
@@ -71,30 +72,22 @@ test("the redesign retains the requested content and removes the superseded role
   assert.match(project, /Enlarge:/);
 });
 
-test("the dark visual system has gradient and shader fallbacks without navy", async () => {
+test("local Geist fonts and reduced motion support are retained", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
-  assert.match(css, /--paper: #141414/);
-  assert.match(css, /linear-gradient/);
+  assert.match(css, /--paper:#f1f2ee/);
   assert.match(css, /prefers-reduced-motion/);
-  assert.doesNotMatch(css, /00002b|deep-blue/i);
-  const shader = await readFile(new URL("../app/components/ShaderBackdrop.tsx", import.meta.url), "utf8");
-  assert.match(shader, /getContext\("webgl"/);
-  assert.match(shader, /portfolio-motion-change/);
-  assert.match(shader, /uniform float material/);
-  assert.match(shader, /threads=/);
-  assert.match(shader, /contour=/);
-  assert.match(shader, /ribbon=/);
-  assert.match(shader, /circuit=/);
+  const layout = await readFile(new URL("../app/layout.tsx", import.meta.url), "utf8");
+  assert.match(layout, /GeistSerif-Regular.woff2/);
+  assert.match(layout, /Geist-Regular.woff2/);
+  assert.doesNotMatch(layout, /next\/font\/google/);
 });
 
-test("navigation and motion controls retain accessible static fallbacks", async () => {
+test("navigation and fieldwork retain accessible static fallbacks", async () => {
   const html = await readExport("index.html");
   assert.match(html, /aria-controls="mobile-menu"/);
-  assert.doesNotMatch(html, /aria-label="Pause motion"/);
-  assert.match(html, /aria-label="Pause planet animation"/);
-  assert.match(html, /class="viewport-fade" data-hidden="true" aria-hidden="true"/);
-  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
-  assert.match(css, /\.contribution-list \{ list-style: disc outside/);
+  assert.match(html, /kafart-hands-of-resilience.jpg/);
+  assert.match(html, /aria-live="polite"/);
+  assert.doesNotMatch(html, /viewport-fade|ASCII planet/);
 });
 
 test("gallery arrows are labelled and omitted for single-image projects", async () => {

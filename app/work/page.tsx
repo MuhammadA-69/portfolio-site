@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { WorkCollection } from "../components/WorkCollection";
-import { ShaderBackdrop } from "../components/ShaderBackdrop";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 import { projects } from "../portfolio-data";
@@ -17,7 +16,6 @@ export default function WorkPage() {
       <SiteHeader />
       <main>
         <section className="inner-hero page-shell">
-          <ShaderBackdrop variant={0.25} />
           <h1>Selected work</h1>
           <p>
             Work at the intersection of cultural institutions, public

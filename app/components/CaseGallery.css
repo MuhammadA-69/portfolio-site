@@ -10,7 +10,7 @@
   border: 0;
   border-radius: 0;
   padding: max(18px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
-  background: #141414;
+  background: var(--paper); color: var(--ink);
   overflow: hidden;
 }
 .image-dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 18px; }

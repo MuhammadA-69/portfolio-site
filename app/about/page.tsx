@@ -4,7 +4,6 @@ import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 import { experience, recognition } from "../portfolio-data";
 import { sitePath } from "../site-path";
-import { ShaderBackdrop } from "../components/ShaderBackdrop";
 
 const skills = [
   {
@@ -73,7 +72,7 @@ export default function AboutPage() {
       <main>
         <section className="about-hero page-shell">
           <div>
-            <h1>Culture meets systems.</h1>
+            <h1>Culture &amp; systems.</h1>
             <p>
               I currently serve as Strategic Communications Lead at KAFART, a
               cultural platform working with artists, designers, researchers,
@@ -90,7 +89,6 @@ export default function AboutPage() {
             </p>
           </div>
           <figure>
-            <ShaderBackdrop variant={0.35} />
             <img
               src={sitePath("/assets/about-headshot.jpg")}
               alt="Portrait of Muhammad Al-amin Yusha'u"

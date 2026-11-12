@@ -2,25 +2,17 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { LiquidGlass } from "@aberhamm/liquid-glass-react";
 import { sitePath } from "../site-path";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const [expanded, setExpanded] = useState(false);
-
-  useEffect(() => {
-    const update = () => setExpanded((current) => window.scrollY > (current ? 32 : 80));
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
-  }, []);
-
+  const toggleRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     if (!menuOpen) return;
 
     const previousOverflow = document.body.style.overflow;
+    const toggleButton = toggleRef.current;
     const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const background = [...document.querySelectorAll<HTMLElement>("main, footer")]
       .map((element) => ({ element, inert: element.inert }));
@@ -53,7 +45,8 @@ export function SiteHeader() {
     return () => {
       document.body.style.overflow = previousOverflow;
       background.forEach(({ element, inert }) => { element.inert = inert; });
-      if (previouslyFocused?.getClientRects().length) previouslyFocused.focus();
+      if (toggleButton?.getClientRects().length) toggleButton.focus();
+      else if (previouslyFocused?.getClientRects().length) previouslyFocused.focus();
       window.removeEventListener("keydown", closeOnEscape);
       window.removeEventListener("resize", closeOnDesktop);
     };
@@ -65,17 +58,9 @@ export function SiteHeader() {
     <>
     <div className="header-spacer" aria-hidden="true" />
     <header
-      className={`site-header ${expanded ? "site-header-expanded" : ""} ${menuOpen ? "site-header-menu-open" : ""}`}
+      className={`site-header ${menuOpen ? "site-header-menu-open" : ""}`}
       inert={menuOpen}
     >
-      <div className="dock-material" aria-hidden="true">
-        <LiquidGlass className="dock-glass" variant="clear" displacement displacementScale={38}
-          blurAmount={0.1} saturation={115} aberrationIntensity={2}
-          elasticity={0} cornerRadius={22} padding={0}
-          style={{ width: "100%", height: "100%" }}>
-          <span />
-        </LiquidGlass>
-      </div>
       <Link className="wordmark" href="/" aria-label="Muhammad Al-amin Yusha'u, home">
         M.A.Y.
       </Link>
@@ -88,6 +73,7 @@ export function SiteHeader() {
         Start a conversation
       </a>
       <button
+        ref={toggleRef}
         className={`menu-toggle ${menuOpen ? "menu-toggle-open" : ""}`}
         type="button"
         aria-expanded={menuOpen}

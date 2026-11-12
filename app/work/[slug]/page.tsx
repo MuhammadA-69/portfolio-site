@@ -7,7 +7,6 @@ import { SiteHeader } from "../../components/SiteHeader";
 import { projects } from "../../portfolio-data";
 import { sitePath } from "../../site-path";
 import { CaseGallery } from "../../components/CaseGallery";
-import { ShaderBackdrop } from "../../components/ShaderBackdrop";
 
 export const dynamicParams = false;
 
@@ -49,7 +48,6 @@ export default async function ProjectPage({
         <section
           className={`case-hero accent-${project.accent} case-hero-${project.slug}`}
         >
-          <ShaderBackdrop variant={projectIndex / projects.length} material={projectIndex + 1} />
           <div className="page-shell case-hero-grid">
             <div>
               <Link className="back-link" href="/work">

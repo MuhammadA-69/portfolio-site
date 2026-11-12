@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
+import localFont from "next/font/local";
 import { sitePath } from "./site-path";
 import "./globals.css";
 import "./interactions.css";
 import "./components/CaseGallery.css";
 import { ScrollEffects } from "./components/ScrollEffects";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  display: "swap",
-});
+const serif = localFont({ src: "./fonts/GeistSerif-Regular.woff2", variable: "--font-serif", display: "swap" });
+const sans = localFont({ src: "./fonts/Geist-Regular.woff2", variable: "--font-sans", display: "swap" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
@@ -56,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={archivo.variable}>
+      <body className={`${serif.variable} ${sans.variable}`}>
         {children}
         <ScrollEffects />
       </body>
