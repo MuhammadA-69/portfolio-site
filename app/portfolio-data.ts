@@ -37,7 +37,7 @@ export const projects: Project[] = [
     summary:
       "At the Kaduna Fashion and Art Exhibition, I lead communications planning across festival editions and related programmes. The work moves between research, programme delivery, publishing and the systems that help a cultural institution remain useful between events.",
     contribution: [
-      "Built KAFART's trilingual website in English, French and Hausa, including the festival archive, exhibitor directory and open-call portal.",
+      "Built KAFART's trilingual website in English, French and Hausa, including the festival archive, exhibitor directory and open-call portal, and developed KAFART Shop.",
       "Initiated the KAFART and Kaduna Museum augmented-reality integration and coordinated curatorial and technical contributors around one visitor journey.",
       "Planned communications across three festival editions and the 2025 British Council Abuja Pop-Up, then authored the official post-event report.",
       "Co-curated Hands of Resilience, supported Into the Art of Making and moderated a 2024 conversation on heritage, sustainability and the next generation of African creatives.",
@@ -94,6 +94,7 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "Visit KAFART", href: "https://kafartng.org/" },
+      { label: "Visit KAFART Shop", href: "https://shop.kafartng.org/" },
       {
         label: "Read the 2025 press coverage",
         href: "https://cdn.businessday.ng/wp-content/uploads/2025/07/BD_20250712.pdf",

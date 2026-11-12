@@ -7,6 +7,7 @@ import { SiteHeader } from "../../components/SiteHeader";
 import { projects } from "../../portfolio-data";
 import { sitePath } from "../../site-path";
 import { CaseGallery } from "../../components/CaseGallery";
+import { VideoEdits } from "../../components/VideoEdits";
 
 export const dynamicParams = false;
 
@@ -105,6 +106,8 @@ export default async function ProjectPage({
             </div>
           </div>
         </section>
+
+        {project.slug === "kafart" && <VideoEdits />}
 
         <CaseGallery images={project.images} />
 
