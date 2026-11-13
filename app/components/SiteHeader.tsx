@@ -67,8 +67,8 @@ export function SiteHeader() {
         M.A.Y.
       </Link>
       <nav aria-label="Primary navigation">
-        <Link href="/work">Work</Link>
-        <Link href="/about">About</Link>
+        <Link href="/work" aria-current={pathname.startsWith("/work") ? "page" : undefined}>Work</Link>
+        <Link href="/about" aria-current={pathname.startsWith("/about") ? "page" : undefined}>About</Link>
         <a href={sitePath("/downloads/muhammad-alamin-yushau-cv.pdf")}>CV</a>
       </nav>
       <a className="header-contact" href="mailto:alaminyushau234@gmail.com">
