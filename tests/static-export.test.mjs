@@ -85,7 +85,7 @@ test("local Geist fonts and reduced motion support are retained", async () => {
 test("navigation and fieldwork retain accessible static fallbacks", async () => {
   const html = await readExport("index.html");
   assert.match(html, /aria-controls="mobile-menu"/);
-  assert.match(html, /kafart-hands-of-resilience.jpg/);
+  assert.match(html, /kafart-hands-of-resilience-noir.jpg/);
   assert.match(html, /aria-live="polite"/);
   assert.doesNotMatch(html, /viewport-fade|ASCII planet/);
 });
