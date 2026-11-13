@@ -102,6 +102,38 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "hibaf",
+    title: "HIBAF",
+    period: "2026",
+    discipline: "Product design, creative development, cultural engagement",
+    lead: "A postcard maker connecting festivalgoers across London, Kaduna and Abuja.",
+    summary: "For the sixth Hausa International Book & Arts Festival, I designed and built a personalised postcard maker for its first multi-city edition. The experience gives each city a distinct visual identity while inviting people to become part of the festival story.",
+    contribution: [
+      "Designed a postcard-inspired system for London, Kaduna and Abuja, combining city artwork, festival branding and a personal photo.",
+      "Built an accessible city and attendee flow for individuals and groups, with live preview, photo positioning and downloadable cards.",
+      "Used a shared canvas renderer for on-screen previews and 1200 × 1500 PNG exports, working within the festival’s Next.js, React and TypeScript codebase.",
+      "Kept photo processing on the visitor’s device and supported recovery of their work during the visit.",
+      "Integrated the card invitation into the festival website, connecting its city designs to the maker."
+    ],
+    evidence: [
+      "Three city designs for London, Kaduna and Abuja",
+      "London · 24 October 2026; Kaduna · 4–5 December 2026; Abuja · 11 December 2026",
+      "Personalised cards for individuals or groups",
+      "1200 × 1500 downloadable PNGs, rendered in the browser"
+    ],
+    hero: "/assets/hibaf-784.png",
+    heroAlt: "HIBAF website invitation showing the London, Kaduna and Abuja postcard designs",
+    accent: "forest",
+    images: [
+      { src: "/assets/hibaf-784.png", alt: "The HIBAF website presenting three city cards", caption: "The festival website introduces a separate postcard design for each city.", fit: "contain" },
+      { src: "/assets/hibaf-785.png", alt: "Card maker showing the city selection and personalised card interface", caption: "The card maker starts by asking where the visitor will attend.", fit: "contain" },
+      { src: "/assets/hibaf-786.png", alt: "London postcard preview and photo upload controls", caption: "The London design brings its own city artwork into the postcard.", fit: "contain" },
+      { src: "/assets/hibaf-787.png", alt: "Kaduna postcard preview and photo upload controls", caption: "The Kaduna version carries the same personalisation flow with its own visual identity.", fit: "contain" },
+      { src: "/assets/hibaf-788.png", alt: "Abuja postcard preview and photo upload controls", caption: "The Abuja design completes the three-city set.", fit: "contain" }
+    ],
+    links: [{ label: "Visit the HIBAF card maker", href: "https://hausabaf.com/your-card" }],
+  },
+  {
     slug: "subject-to-climate",
     title: "SubjectToClimate Youth Engagement Committee",
     period: "2025",

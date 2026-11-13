@@ -6,6 +6,7 @@ import { ProjectCard } from "./ProjectCard";
 
 const categories = ["All", "Culture", "Communications", "Technology", "Design", "Writing"];
 const groups: Record<string, string[]> = {
+  hibaf: ["Culture", "Communications", "Technology", "Design"],
   kafart: ["Culture", "Communications", "Technology"],
   "subject-to-climate": ["Communications"],
   "northern-creatives-conference": ["Culture", "Communications", "Writing"],
