@@ -7,6 +7,7 @@ import { SiteHeader } from "../../components/SiteHeader";
 import { projects } from "../../portfolio-data";
 import { sitePath } from "../../site-path";
 import { CaseGallery } from "../../components/CaseGallery";
+import graphics from "../../kafart-graphics.json";
 import { VideoEdits } from "../../components/VideoEdits";
 
 export const dynamicParams = false;
@@ -109,6 +110,7 @@ export default async function ProjectPage({
 
         {project.slug === "kafart" && <VideoEdits />}
 
+        {project.slug === "kafart" && <CaseGallery images={graphics as import("../../portfolio-data").ProjectImage[]} title="Graphics" id="kafart-graphics" />}
         <CaseGallery images={project.images} />
 
         <section className="next-project page-shell">

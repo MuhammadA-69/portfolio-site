@@ -1203,3 +1203,5 @@ button:active {
 .video-library label { display:block; margin-bottom:10px; font-size:14px; }
 .video-library select { width:100%; padding:14px; border:1px solid #8e9482; background:transparent; color:var(--ink); font:inherit; }
 .video-library .text-link { margin-top:10px; }
+
+.hero-introduction p:last-child{text-align:right} a:hover{text-decoration:underline;text-underline-offset:5px} .mobile-menu nav a[aria-current="page"]{color:var(--olive)} .footer-links a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}.footer-links svg{width:22px;height:22px}.case-evidence p{position:relative;padding-left:28px}.case-evidence p::before{content:"→";position:absolute;left:0;color:var(--olive)} .selected-subject-to-climate .selected-image img,.project-card-subject-to-climate .project-image-link img{object-fit:contain;padding:12%;background:#fff}.case-hero-subject-to-climate .case-hero-grid>img{background:#fff;padding:8%}

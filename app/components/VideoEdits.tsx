@@ -7,7 +7,7 @@ export function VideoEdits() {
   const [selected, setSelected] = useState(0);
   const video = edits[selected];
   return <section className="page-shell case-videos section-block" aria-labelledby="case-videos-heading">
-    <div><h2 id="case-videos-heading">In motion</h2><p>A selection of videos I edited for KAFART and other creative projects.</p><p className="video-count">{edits.length} edits · Select a title to watch</p></div>
+    <div><h2 id="case-videos-heading">In motion</h2><p>A selection of videos I edited for KAFART.</p><p className="video-count">{edits.length} edits · Select a title to watch</p></div>
     <div className="video-library">
       <video key={video.src} controls preload="none" playsInline aria-label={video.title}>
         <source src={sitePath(video.src)} type="video/mp4" /> Your browser does not support video playback.

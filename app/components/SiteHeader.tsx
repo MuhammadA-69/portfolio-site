@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { sitePath } from "../site-path";
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -115,10 +117,11 @@ export function SiteHeader() {
           </button>
         </div>
         <nav aria-label="Mobile navigation">
-          <Link href="/work" onClick={closeMenu} tabIndex={menuOpen ? 0 : -1}>
+          <Link href="/" aria-current={pathname === "/" ? "page" : undefined} onClick={closeMenu} tabIndex={menuOpen ? 0 : -1}>Home</Link>
+          <Link href="/work" aria-current={pathname.startsWith("/work") ? "page" : undefined} onClick={closeMenu} tabIndex={menuOpen ? 0 : -1}>
             Work
           </Link>
-          <Link href="/about" onClick={closeMenu} tabIndex={menuOpen ? 0 : -1}>
+          <Link href="/about" aria-current={pathname.startsWith("/about") ? "page" : undefined} onClick={closeMenu} tabIndex={menuOpen ? 0 : -1}>
             About
           </Link>
           <a

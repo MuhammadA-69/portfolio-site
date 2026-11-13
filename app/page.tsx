@@ -11,11 +11,11 @@ export default function Home() {
   <section className="home-hero page-shell">
    <div className="hero-introduction"><p>Muhammad Al-amin Yusha’u</p><p>Communications, culture<br />& responsible technology</p></div>
    <h1>Culture,<br /><span>made public.</span></h1>
-   <div className="hero-bottom"><p>I’m a communications lead and cultural programmer helping ideas find their people.</p><a className="text-link" href="#selected-work">Explore my work <span aria-hidden="true">↓</span></a></div>
+   <div className="hero-bottom"><p>I’m a communications lead and cultural storyteller helping ideas find their people.</p><a className="text-link" href="#selected-work">Explore my work <span aria-hidden="true">↓</span></a></div>
    <FieldNotes />
   </section>
   <section className="selected-section page-shell" id="selected-work">
-   <div className="selected-intro"><h2>Selected work</h2><p>From a festival in Northern Nigeria to a cross-border climate conversation. Different settings, a shared interest in people and possibility.</p><Link className="text-link" href="/work">View all seven projects <span aria-hidden="true">→</span></Link></div>
+   <div className="selected-intro"><h2>Selected work</h2><p>From a festival in Northern Nigeria to a cross-border climate conversation. Different settings, a shared interest in people and possibility.</p><Link className="text-link" href="/work">View all eight projects <span aria-hidden="true">→</span></Link></div>
    <div className="selected-projects">{selected.map((project) => <article className={`selected-project selected-${project.slug}`} key={project.slug}>
     <Link className="selected-image" href={`/work/${project.slug}`}><img src={sitePath(project.hero)} alt={project.heroAlt} loading="lazy" /><span className="image-action" aria-hidden="true">→</span></Link>
     <div className="project-caption"><div><h3><Link href={`/work/${project.slug}`}>{project.slug === "subject-to-climate" ? "Youth & climate" : project.title}</Link></h3><p className="project-period">{project.period}</p><p>{project.lead}</p></div></div>

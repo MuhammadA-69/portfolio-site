@@ -12,7 +12,7 @@ export function ProjectCard({
 }) {
   return (
     <article
-      className={`project-card accent-${project.accent} ${
+      className={`project-card project-card-${project.slug} accent-${project.accent} ${
         featured ? "project-card-featured" : ""
       }`}
     >

@@ -37,6 +37,7 @@ export const projects: Project[] = [
     summary:
       "At the Kaduna Fashion and Art Exhibition, I lead communications planning across festival editions and related programmes. The work moves between research, programme delivery, publishing and the systems that help a cultural institution remain useful between events.",
     contribution: [
+      "Designed and built the KAFART personalised card maker using Astro, TypeScript, browser canvas and local MediaPipe portrait processing; this project led to a similar commission for HIBAF.",
       "Built KAFART's trilingual website in English, French and Hausa, including the festival archive, exhibitor directory and open-call portal, and developed KAFART Shop.",
       "Initiated the KAFART and Kaduna Museum augmented-reality integration and coordinated curatorial and technical contributors around one visitor journey.",
       "Planned communications across three festival editions and the 2025 British Council Abuja Pop-Up, then authored the official post-event report.",
@@ -55,6 +56,11 @@ export const projects: Project[] = [
       "The KAFART team and participating creatives gathered at the exhibition",
     accent: "forest",
     images: [
+      { src: "/assets/kafart-card-28.png", alt: "Example personalised KAFART 6 attendee card", caption: "A personalised KAFART 6 card, generated with the festival card maker.", fit: "contain" },
+      { src: "/assets/kafart-card-23.png", alt: "Example personalised KAFART 6 attendee card", caption: "A personalised KAFART 6 card, generated with the festival card maker.", fit: "contain" },
+      { src: "/assets/kafart-card-22.png", alt: "Example personalised KAFART 6 attendee card", caption: "A personalised KAFART 6 card, generated with the festival card maker.", fit: "contain" },
+      { src: "/assets/kafart-card-21.png", alt: "Example personalised KAFART 6 attendee card", caption: "A personalised KAFART 6 card, generated with the festival card maker.", fit: "contain" },
+      { src: "/assets/kafart-card-20.png", alt: "Example personalised KAFART 6 attendee card", caption: "A personalised KAFART 6 card, generated with the festival card maker.", fit: "contain" },
       {
         src: "/assets/kafart-live-website.png",
         alt: "The KAFART website homepage for the sixth edition",
@@ -94,6 +100,7 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "Visit KAFART", href: "https://kafartng.org/" },
+      { label: "Try the personalised card maker", href: "https://kafartng.org/your-card/" },
       { label: "Visit KAFART Shop", href: "https://shop.kafartng.org/" },
       {
         label: "Read the 2025 press coverage",
@@ -125,6 +132,9 @@ export const projects: Project[] = [
     heroAlt: "The HIBAF Abuja personalised postcard design",
     accent: "forest",
     images: [
+      { src: "/assets/hibaf-card-abuja.png", alt: "Personalised HIBAF Abuja postcard", caption: "A personalised Abuja postcard created with the HIBAF card maker.", fit: "contain" },
+      { src: "/assets/hibaf-card-london.png", alt: "Personalised HIBAF London postcard", caption: "A personalised London postcard created with the HIBAF card maker.", fit: "contain" },
+      { src: "/assets/hibaf-card-kaduna.png", alt: "Personalised HIBAF Kaduna postcard", caption: "A personalised Kaduna postcard created with the HIBAF card maker.", fit: "contain" },
       { src: "/assets/hibaf-784.png", alt: "The HIBAF website presenting three city cards", caption: "The festival website introduces a separate postcard design for each city.", fit: "contain" },
       { src: "/assets/hibaf-785.png", alt: "Card maker showing the city selection and personalised card interface", caption: "The card maker starts by asking where the visitor will attend.", fit: "contain" },
       { src: "/assets/hibaf-786.png", alt: "London postcard preview and photo upload controls", caption: "The London design brings its own city artwork into the postcard.", fit: "contain" },
@@ -132,6 +142,30 @@ export const projects: Project[] = [
       { src: "/assets/hibaf-788.png", alt: "Abuja postcard preview and photo upload controls", caption: "The Abuja design completes the three-city set.", fit: "contain" }
     ],
     links: [{ label: "Visit the HIBAF card maker", href: "https://hausabaf.com/your-card" }],
+  },
+  {
+    slug: "creative-work",
+    title: "Creative work",
+    period: "Selected projects",
+    discipline: "Visual design, identity and cultural storytelling",
+    lead: "A collection of identity, editorial and visual work made across different contexts.",
+    summary: "These selected projects bring together visual identities, posters, patterns and moments from cultural work. Some are commissioned designs; others are exploratory concepts.",
+    contribution: ["Created concept posters for the Arewa International Film Festival and an opening flyer for Cloaks Gallery.", "Designed a Nigerian unity fabric pattern bringing together symbols and references from across the country.", "Explored identity concepts for RecurX and The Queens Partners, and developed the Budanza visual identity.", "Designed a Kaduna State two-year anniversary poster and documented cultural conversations around Kemi Ilesanmi’s visit."],
+    evidence: ["Poster and identity design", "Fabric pattern exploration", "Brand concepts and cultural documentation"],
+    hero: "/assets/creative-aiff.png",
+    heroAlt: "Concept poster for the Arewa International Film Festival",
+    accent: "ink",
+    images: [
+      { src: "/assets/creative-aiff.png", alt: "Arewa International Film Festival poster concept", caption: "Arewa International Film Festival poster concept", fit: "contain" },
+      { src: "/assets/creative-cloaks.png", alt: "Cloaks Gallery grand opening flyer", caption: "Cloaks Gallery grand opening flyer", fit: "contain" },
+      { src: "/assets/creative-naija-pattern.png", alt: "Fabric pattern exploring Nigerian unity", caption: "Fabric pattern exploring Nigerian unity", fit: "contain" },
+      { src: "/assets/creative-recurx.png", alt: "RecurX logo concept", caption: "RecurX logo concept", fit: "contain" },
+      { src: "/assets/creative-queens.png", alt: "The Queens Partners identity concept", caption: "The Queens Partners identity concept", fit: "contain" },
+      { src: "/assets/creative-kaduna-poster.png", alt: "Kaduna State two-year anniversary poster", caption: "Kaduna State two-year anniversary poster", fit: "contain" },
+      { src: "/assets/creative-budanza-creative.png", alt: "Budanza identity and business cards", caption: "Budanza identity and business cards", fit: "contain" },
+      { src: "/assets/creative-kemi-conversation.jpg", alt: "Group photograph following the conversation with Kemi Ilesanmi at Ilmi House", caption: "Group photograph following the conversation with Kemi Ilesanmi at Ilmi House", fit: "contain" },
+    ],
+    links: [],
   },
   {
     slug: "subject-to-climate",
@@ -154,9 +188,8 @@ export const projects: Project[] = [
       "Student stories connected to classroom materials",
       "Remote facilitation across time zones",
     ],
-    hero: "/assets/yec-presentation.jpg",
-    heroAlt:
-      "A presentation slide explaining the Youth Engagement Committee with Muhammad visible on the call",
+    hero: "/assets/subjecttoclimate-logo.png",
+    heroAlt: "SubjectToClimate logo",
     accent: "clay",
     images: [
       {

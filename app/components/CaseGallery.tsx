@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ProjectImage } from "../portfolio-data";
 import { sitePath } from "../site-path";
 
-export function CaseGallery({ images }: { images: ProjectImage[] }) {
+export function CaseGallery({ images, title = "A closer look", id = "project-gallery" }: { images: ProjectImage[]; title?: string; id?: string }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState(false);
@@ -16,8 +16,8 @@ export function CaseGallery({ images }: { images: ProjectImage[] }) {
     return () => { document.body.style.overflow = previous; };
   }, [open]);
   const select = (offset: number) => setActive((index) => (index + offset + images.length) % images.length);
-  return <section className="page-shell case-gallery section-block" aria-labelledby="project-gallery">
-    <div className="gallery-heading"><h2 id="project-gallery">A closer look</h2><p>Photographs, artefacts and evidence from the work.</p></div>
+  return <section className="page-shell case-gallery section-block" aria-labelledby={id}>
+    <div className="gallery-heading"><h2 id={id}>{title}</h2><p>Photographs, artefacts and evidence from the work.</p></div>
     <div className="gallery-grid">
       {images.map((image, index) => <figure key={`${image.src}-${index}`} className={image.fit === "contain" ? "gallery-contain" : ""}>
         <button type="button" aria-label={`Enlarge: ${image.caption}`} onClick={() => { setActive(index); dialog.current?.showModal(); setOpen(true); }}>
