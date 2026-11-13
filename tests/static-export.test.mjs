@@ -90,11 +90,10 @@ test("navigation and fieldwork retain accessible static fallbacks", async () => 
   assert.doesNotMatch(html, /viewport-fade|ASCII planet/);
 });
 
-test("gallery arrows are labelled and omitted for single-image projects", async () => {
+test("gallery arrows are labelled for multi-image projects", async () => {
   const kafart = await readExport("work/kafart/index.html");
   assert.match(kafart, /aria-label="Previous image"/);
   assert.match(kafart, /aria-label="Next image"/);
   const budanza = await readExport("work/budanza/index.html");
-  assert.match(budanza, /image-dialog-single/);
-  assert.doesNotMatch(budanza, /aria-label="Next image"/);
+  assert.match(budanza, /aria-label="Next image"/);
 });

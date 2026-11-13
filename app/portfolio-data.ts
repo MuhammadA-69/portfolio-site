@@ -1,3 +1,5 @@
+import collection from "./creative-collection.json";
+
 export type ProjectImage = {
   src: string;
   alt: string;
@@ -150,20 +152,20 @@ export const projects: Project[] = [
     discipline: "Visual design, identity and cultural storytelling",
     lead: "A collection of identity, editorial and visual work made across different contexts.",
     summary: "These selected projects bring together visual identities, posters, patterns and moments from cultural work. Some are commissioned designs; others are exploratory concepts.",
-    contribution: ["Created concept posters for the Arewa International Film Festival and an opening flyer for Cloaks Gallery.", "Designed a Nigerian unity fabric pattern bringing together symbols and references from across the country.", "Explored identity concepts for RecurX and The Queens Partners, and developed the Budanza visual identity.", "Designed a Kaduna State two-year anniversary poster and documented cultural conversations around Kemi Ilesanmi’s visit."],
+    contribution: ["Created concept posters for the Arewa International Film Festival and an opening flyer for Cloaks Gallery.", "Designed a unity fabric pattern combining Benin Bronze masks, Nsibidi, Arewa patterns, the Abuja City Gate, Wazobia and other Nigerian references.", "Explored identity concepts for RecurX and The Queens Partners,.", "Designed a Kaduna State two-year anniversary poster."],
     evidence: ["Poster and identity design", "Fabric pattern exploration", "Brand concepts and cultural documentation"],
     hero: "/assets/creative-aiff.png",
     heroAlt: "Concept poster for the Arewa International Film Festival",
     accent: "ink",
     images: [
+      ...(collection.aiff as ProjectImage[]),
+      ...(collection.queens as ProjectImage[]),
       { src: "/assets/creative-aiff.png", alt: "Arewa International Film Festival poster concept", caption: "Arewa International Film Festival poster concept", fit: "contain" },
       { src: "/assets/creative-cloaks.png", alt: "Cloaks Gallery grand opening flyer", caption: "Cloaks Gallery grand opening flyer", fit: "contain" },
       { src: "/assets/creative-naija-pattern.png", alt: "Fabric pattern exploring Nigerian unity", caption: "Fabric pattern exploring Nigerian unity", fit: "contain" },
       { src: "/assets/creative-recurx.png", alt: "RecurX logo concept", caption: "RecurX logo concept", fit: "contain" },
       { src: "/assets/creative-queens.png", alt: "The Queens Partners identity concept", caption: "The Queens Partners identity concept", fit: "contain" },
       { src: "/assets/creative-kaduna-poster.png", alt: "Kaduna State two-year anniversary poster", caption: "Kaduna State two-year anniversary poster", fit: "contain" },
-      { src: "/assets/creative-budanza-creative.png", alt: "Budanza identity and business cards", caption: "Budanza identity and business cards", fit: "contain" },
-      { src: "/assets/creative-kemi-conversation.jpg", alt: "Group photograph following the conversation with Kemi Ilesanmi at Ilmi House", caption: "Group photograph following the conversation with Kemi Ilesanmi at Ilmi House", fit: "contain" },
     ],
     links: [],
   },
@@ -401,9 +403,9 @@ export const projects: Project[] = [
     lead:
       "A restrained identity for a real-estate advisory brand built from a modular B monogram.",
     summary:
-      "Budanza is a compact brand-identity engagement for a real-estate and development company. I developed a geometric monogram, repeat pattern and business-card system that could sit comfortably across advisory and property-facing materials.",
+      "Budanza is a compact brand-identity engagement for a real-estate and development company. I developed a geometric monogram, repeat pattern and business-card system that could sit comfortably across advisory and property-facing materials. The name brings together Budan and Zaria, the home towns of the founder’s wife and the founder.",
     contribution: [
-      "Created a modular B monogram from a repeatable triangular unit.",
+      "Developed the B and Z monogram through more than 200 sketches, drawing on doors, windows, rooftops and architectural perspectives.",
       "Extended the mark into a simple pattern system for print applications.",
       "Prepared light and dark business-card directions with a restrained material palette.",
     ],
@@ -412,10 +414,11 @@ export const projects: Project[] = [
       "Print-ready business-card direction",
       "Light and dark applications",
     ],
-    hero: "/assets/budanza-brand.jpg",
-    heroAlt: "Budanza business card mockup",
+    hero: "/assets/collection/budanza-01.webp",
+    heroAlt: "Budanza blue business card mockup with the geometric monogram",
     accent: "ink",
     images: [
+      ...(collection.budanza as ProjectImage[]),
       {
         src: "/assets/budanza-brand.jpg",
         alt: "Budanza business card identity in warm grey",

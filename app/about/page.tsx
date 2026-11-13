@@ -49,6 +49,9 @@ const skills = [
 ];
 
 const tools = [
+  "Adobe Illustrator",
+  "Adobe InDesign",
+  "Adobe Photoshop",
   "Airtable",
   "Google Sheets",
   "Google Docs, Slides and Drive",

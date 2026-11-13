@@ -8,6 +8,8 @@ import { projects } from "../../portfolio-data";
 import { sitePath } from "../../site-path";
 import { CaseGallery } from "../../components/CaseGallery";
 import graphics from "../../kafart-graphics.json";
+import collection from "../../creative-collection.json";
+import type { ProjectImage } from "../../portfolio-data";
 import { VideoEdits } from "../../components/VideoEdits";
 
 export const dynamicParams = false;
@@ -111,6 +113,12 @@ export default async function ProjectPage({
         {project.slug === "kafart" && <VideoEdits />}
 
         {project.slug === "kafart" && <CaseGallery images={graphics as import("../../portfolio-data").ProjectImage[]} title="Graphics" id="kafart-graphics" />}
+        {project.slug === "kafart" && <>
+          <CaseGallery images={collection.symbols as ProjectImage[]} title="Arewa symbols" id="arewa-symbols" />
+          <CaseGallery images={collection.merch as ProjectImage[]} title="Merchandise design" id="merchandise-design" />
+          <CaseGallery images={collection.trifold as ProjectImage[]} title="Hands of Resilience" id="hands-of-resilience" />
+          <CaseGallery images={collection.kemi as ProjectImage[]} title="Kemi Ilesanmi’s visit" id="kemi-visit" />
+        </>}
         <CaseGallery images={project.images} />
 
         <section className="next-project page-shell">
