@@ -52,5 +52,35 @@
     "alt": "NT-10",
     "caption": "KAFART Pop-Up 2025 · NT-10",
     "fit": "contain"
+  },
+  {
+    "src": "/assets/kafart-2026-card-guide.png",
+    "alt": "Guide to creating a personalised KAFART 6 attendee card",
+    "caption": "Guide to creating a personalised KAFART 6 attendee card",
+    "fit": "contain"
+  },
+  {
+    "src": "/assets/kafart-2026-ticket-1.png",
+    "alt": "KAFART 6 ticket design 1",
+    "caption": "KAFART 6 ticket design 1",
+    "fit": "contain"
+  },
+  {
+    "src": "/assets/kafart-2026-ticket-2.png",
+    "alt": "KAFART 6 ticket design 2",
+    "caption": "KAFART 6 ticket design 2",
+    "fit": "contain"
+  },
+  {
+    "src": "/assets/kafart-2026-ticket-3.png",
+    "alt": "KAFART 6 ticket design 3",
+    "caption": "KAFART 6 ticket design 3",
+    "fit": "contain"
+  },
+  {
+    "src": "/assets/kafart-2026-ticket-4.png",
+    "alt": "KAFART 6 ticket design 4",
+    "caption": "KAFART 6 ticket design 4",
+    "fit": "contain"
   }
 ]
