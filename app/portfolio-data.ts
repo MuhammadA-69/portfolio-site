@@ -121,8 +121,8 @@ export const projects: Project[] = [
       "Personalised cards for individuals or groups",
       "1200 × 1500 downloadable PNGs, rendered in the browser"
     ],
-    hero: "/assets/hibaf-784.png",
-    heroAlt: "HIBAF website invitation showing the London, Kaduna and Abuja postcard designs",
+    hero: "/assets/hibaf-cover.png",
+    heroAlt: "The HIBAF Abuja personalised postcard design",
     accent: "forest",
     images: [
       { src: "/assets/hibaf-784.png", alt: "The HIBAF website presenting three city cards", caption: "The festival website introduces a separate postcard design for each city.", fit: "contain" },
