@@ -1,10 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CopyEmail } from "../components/CopyEmail";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 import { imageSize } from "../image-meta";
-import { experience, recognition, skills, tools } from "../portfolio-data";
+import {
+  experience,
+  recognition,
+  selectedWriting,
+  skills,
+  tools,
+} from "../portfolio-data";
 import { sitePath } from "../site-path";
 
 const headshotDims = imageSize("/assets/about-headshot.jpg");
@@ -181,6 +188,47 @@ export default function AboutPage() {
               culture, desire, human flourishing and emerging technology.
             </figcaption>
           </figure>
+        </section>
+
+        <section
+          className="page-shell section-block writing-section"
+          aria-labelledby="writing-heading"
+        >
+          <div className="section-heading">
+            <h2 id="writing-heading">Writing, press &amp; talks</h2>
+            <p>
+              Published non-fiction, cultural features, press coverage, panel
+              moderation and academic research.
+            </p>
+          </div>
+          <ul className="writing-list">
+            {selectedWriting.map((item) => (
+              <li key={`${item.year}-${item.title}`}>
+                <span className="writing-year tabular">{item.year}</span>
+                <div className="writing-entry">
+                  {item.href ? (
+                    item.external ? (
+                      <a
+                        className="writing-title-link"
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.title} <span aria-hidden="true">→</span>
+                      </a>
+                    ) : (
+                      <Link className="writing-title-link" href={item.href}>
+                        {item.title} <span aria-hidden="true">→</span>
+                      </Link>
+                    )
+                  ) : (
+                    <span className="writing-title">{item.title}</span>
+                  )}
+                  <span className="writing-context">{item.context}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section className="page-shell about-contact">

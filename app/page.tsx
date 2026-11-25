@@ -16,7 +16,7 @@ const selected = [
   "subject-to-climate",
 ].map((slug) => projects.find((project) => project.slug === slug)!);
 
-const headshotDims = imageSize("/assets/about-headshot.jpg");
+const portraitDims = imageSize("/assets/portrait.jpg");
 
 export default function Home() {
   return (
@@ -137,12 +137,13 @@ export default function Home() {
           <div className="page-shell home-about-grid">
             <figure>
               <img
-                src={sitePath("/assets/about-headshot.jpg")}
-                alt="Muhammad Al-amin Yusha’u wearing traditional dress"
-                width={headshotDims.width}
-                height={headshotDims.height}
+                src={sitePath("/assets/portrait.jpg")}
+                alt="Muhammad Al-amin Yusha’u wearing glasses and a navy double-breasted suit"
+                width={portraitDims.width}
+                height={portraitDims.height}
                 loading="lazy"
                 decoding="async"
+                style={{ objectPosition: "center 18%" }}
               />
             </figure>
             <div>

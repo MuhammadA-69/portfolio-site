@@ -1,6 +1,7 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { imageSize } from "../image-meta";
 import { sitePath } from "../site-path";
@@ -13,6 +14,7 @@ const scenes = [
     caption: "Hands of Resilience · KAFART",
     detail: "Curatorial coordination, and the conversations around the work.",
     position: "center 42%",
+    href: "/work/kafart",
   },
   {
     label: "The community",
@@ -21,6 +23,7 @@ const scenes = [
     caption: "People behind the programme · KAFART",
     detail: "Building a public for art, and a community around its makers.",
     position: "center 24%",
+    href: "/work/kafart",
   },
   {
     label: "The conversation",
@@ -29,6 +32,7 @@ const scenes = [
     caption: "Future Forward · KAFART 2024",
     detail: "Moderating an exchange on culture, creativity and what comes next.",
     position: "center 32%",
+    href: "/work/kafart",
   },
 ];
 
@@ -85,7 +89,9 @@ export function FieldNotes() {
           />
         </div>
         <figcaption>
-          <span>{scene.caption}</span>
+          <Link className="scene-caption-link" href={scene.href}>
+            {scene.caption} <span aria-hidden="true">→</span>
+          </Link>
           <span>{scene.detail}</span>
         </figcaption>
       </figure>

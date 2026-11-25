@@ -685,3 +685,51 @@ export const affiliations = [
   "Northern Creatives Conference",
   "Better Futures Fellowship",
 ];
+
+export type WritingEntry = {
+  year: string;
+  title: string;
+  context: string;
+  href?: string;
+  external?: boolean;
+};
+
+export const selectedWriting: WritingEntry[] = [
+  {
+    year: "2026",
+    title:
+      "Gradient-Based Detection of Low-Variance Data Poisoning in LLM Fine-Tuning",
+    context: "BSc Cyber Security thesis · Air Force Institute of Technology",
+  },
+  {
+    year: "2025",
+    title: "KAFART 2025 Press Coverage",
+    context: "BusinessDay Nigeria · Featured coverage",
+    href: "https://cdn.businessday.ng/wp-content/uploads/2025/07/BD_20250712.pdf",
+    external: true,
+  },
+  {
+    year: "2024",
+    title: "Future Forward: Heritage, Sustainability & African Creative Practice",
+    context: "Panel moderation · KAFART",
+    href: "/work/kafart",
+  },
+  {
+    year: "2023",
+    title: "Good Old Days",
+    context: "Creative non-fiction · Aké Review, Volume X",
+    href: "/work/editorial-work",
+  },
+  {
+    year: "2023",
+    title: "The Pick: Crafty Items – Housewares and Keepsakes",
+    context: "Feature on Tuareg material culture · The Revue",
+    href: "/work/editorial-work",
+  },
+  {
+    year: "2022",
+    title: "Black White Men & Colour and Pizzazz in the Arts & Fashion of Africa",
+    context: "Fiction and cultural feature · The Revue",
+    href: "/work/editorial-work",
+  },
+];

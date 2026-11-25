@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AlamaDiagram } from "../../components/AlamaDiagram";
 import { CaseGallery } from "../../components/CaseGallery";
 import { KafartArchive } from "../../components/KafartArchive";
 import { SiteFooter } from "../../components/SiteFooter";
@@ -209,6 +210,8 @@ export default async function ProjectPage({
             </div>
           </div>
         </section>
+
+        {project.slug === "alama" && <AlamaDiagram />}
 
         <CaseGallery
           images={project.images}
