@@ -10,19 +10,34 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     if (!menuOpen) return;
 
     const previousOverflow = document.body.style.overflow;
     const toggleButton = toggleRef.current;
-    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-    const background = [...document.querySelectorAll<HTMLElement>("main, footer")]
-      .map((element) => ({ element, inert: element.inert }));
-    background.forEach(({ element }) => { element.inert = true; });
-    const focusable = () => [...(menuRef.current?.querySelectorAll<HTMLElement>(
-      'a[href], button:not([disabled])',
-    ) ?? [])].filter((element) => element.tabIndex >= 0);
-    menuRef.current?.querySelector<HTMLButtonElement>(".mobile-menu-close")?.focus();
+    const previouslyFocused =
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
+    const background = [
+      ...document.querySelectorAll<HTMLElement>("main, footer"),
+    ].map((element) => ({ element, inert: element.inert }));
+    background.forEach(({ element }) => {
+      element.inert = true;
+    });
+
+    const focusable = () =>
+      [
+        ...(menuRef.current?.querySelectorAll<HTMLElement>(
+          "a[href], button:not([disabled])",
+        ) ?? []),
+      ].filter((element) => element.tabIndex >= 0);
+
+    menuRef.current
+      ?.querySelector<HTMLButtonElement>(".mobile-menu-close")
+      ?.focus();
+
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setMenuOpen(false);
       if (event.key === "Tab") {
@@ -30,12 +45,15 @@ export function SiteHeader() {
         const first = controls[0];
         const last = controls[controls.length - 1];
         if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault(); last?.focus();
+          event.preventDefault();
+          last?.focus();
         } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault(); first?.focus();
+          event.preventDefault();
+          first?.focus();
         }
       }
     };
+
     const closeOnDesktop = () => {
       if (window.innerWidth > 820) setMenuOpen(false);
     };
@@ -46,9 +64,12 @@ export function SiteHeader() {
 
     return () => {
       document.body.style.overflow = previousOverflow;
-      background.forEach(({ element, inert }) => { element.inert = inert; });
+      background.forEach(({ element, inert }) => {
+        element.inert = inert;
+      });
       if (toggleButton?.getClientRects().length) toggleButton.focus();
-      else if (previouslyFocused?.getClientRects().length) previouslyFocused.focus();
+      else if (previouslyFocused?.getClientRects().length)
+        previouslyFocused.focus();
       window.removeEventListener("keydown", closeOnEscape);
       window.removeEventListener("resize", closeOnDesktop);
     };
@@ -58,36 +79,55 @@ export function SiteHeader() {
 
   return (
     <>
-    <a className="skip-link" href="#main-content">Skip to content</a>
-    <div className="header-spacer" aria-hidden="true" />
-    <header
-      className={`site-header ${menuOpen ? "site-header-menu-open" : ""}`}
-      inert={menuOpen}
-    >
-      <Link className="wordmark" href="/" aria-label="Muhammad Al-amin Yusha'u, home">
-        M.A.Y.
-      </Link>
-      <nav aria-label="Primary navigation">
-        <Link href="/work" aria-current={pathname.startsWith("/work") ? "page" : undefined}>Work</Link>
-        <Link href="/about" aria-current={pathname.startsWith("/about") ? "page" : undefined}>About</Link>
-        <a href={sitePath("/downloads/muhammad-alamin-yushau-cv.pdf")}>CV</a>
-      </nav>
-      <a className="header-contact" href="mailto:alaminyushau234@gmail.com">
-        Start a conversation
+      <a className="skip-link" href="#main-content">
+        Skip to content
       </a>
-      <button
-        ref={toggleRef}
-        className={`menu-toggle ${menuOpen ? "menu-toggle-open" : ""}`}
-        type="button"
-        aria-expanded={menuOpen}
-        aria-controls="mobile-menu"
-        aria-label={menuOpen ? "Close menu" : "Open menu"}
-        onClick={() => setMenuOpen((open) => !open)}
-      >
-        <span />
-        <span />
-      </button>
-    </header>
+      <header className="site-header" inert={menuOpen}>
+        <Link
+          className="wordmark"
+          href="/"
+          aria-label="Muhammad Al-amin Yusha'u, home"
+        >
+          M.A.Y.
+        </Link>
+        <nav aria-label="Primary navigation">
+          <Link
+            href="/work"
+            aria-current={pathname.startsWith("/work") ? "page" : undefined}
+          >
+            Work
+          </Link>
+          <Link
+            href="/about"
+            aria-current={pathname.startsWith("/about") ? "page" : undefined}
+          >
+            About
+          </Link>
+          <a
+            href={sitePath("/downloads/muhammad-alamin-yushau-cv.pdf")}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="CV PDF — opens in new tab"
+          >
+            CV <span className="nav-badge" aria-hidden="true">PDF</span>
+          </a>
+        </nav>
+        <a className="header-contact" href="mailto:alaminyushau234@gmail.com">
+          Start a conversation
+        </a>
+        <button
+          ref={toggleRef}
+          className="menu-toggle"
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+        </button>
+      </header>
       <div
         ref={menuRef}
         className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}
@@ -100,8 +140,9 @@ export function SiteHeader() {
       >
         <div className="mobile-menu-top">
           <Link
-            className="wordmark wordmark-light"
+            className="wordmark"
             href="/"
+            aria-label="Muhammad Al-amin Yusha'u, home"
             onClick={closeMenu}
             tabIndex={menuOpen ? 0 : -1}
           >
@@ -118,15 +159,35 @@ export function SiteHeader() {
           </button>
         </div>
         <nav aria-label="Mobile navigation">
-          <Link href="/" aria-current={pathname === "/" ? "page" : undefined} onClick={closeMenu} tabIndex={menuOpen ? 0 : -1}>Home</Link>
-          <Link href="/work" aria-current={pathname.startsWith("/work") ? "page" : undefined} onClick={closeMenu} tabIndex={menuOpen ? 0 : -1}>
+          <Link
+            href="/"
+            aria-current={pathname === "/" ? "page" : undefined}
+            onClick={closeMenu}
+            tabIndex={menuOpen ? 0 : -1}
+          >
+            Home
+          </Link>
+          <Link
+            href="/work"
+            aria-current={pathname.startsWith("/work") ? "page" : undefined}
+            onClick={closeMenu}
+            tabIndex={menuOpen ? 0 : -1}
+          >
             Work
           </Link>
-          <Link href="/about" aria-current={pathname.startsWith("/about") ? "page" : undefined} onClick={closeMenu} tabIndex={menuOpen ? 0 : -1}>
+          <Link
+            href="/about"
+            aria-current={pathname.startsWith("/about") ? "page" : undefined}
+            onClick={closeMenu}
+            tabIndex={menuOpen ? 0 : -1}
+          >
             About
           </Link>
           <a
             href={sitePath("/downloads/muhammad-alamin-yushau-cv.pdf")}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="CV PDF — opens in new tab"
             onClick={closeMenu}
             tabIndex={menuOpen ? 0 : -1}
           >

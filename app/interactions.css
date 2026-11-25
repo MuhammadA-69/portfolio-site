@@ -1,2 +1,8 @@
-/* Interaction states use the same light palette as the editorial pages. */
-@media (hover:none){.image-action{opacity:1;transform:none}}
+/* Touch-device affordances keep interaction cues visible without hover. */
+@media (hover: none) {
+  .image-action,
+  .gallery-enlarge {
+    opacity: 1;
+    transform: none;
+  }
+}

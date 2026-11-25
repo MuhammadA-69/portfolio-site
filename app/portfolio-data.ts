@@ -6,6 +6,7 @@ export type ProjectImage = {
   alt: string;
   caption: string;
   fit?: "cover" | "contain";
+  position?: string;
 };
 
 export type ProjectLink = {
@@ -16,6 +17,9 @@ export type ProjectLink = {
 export type Project = {
   slug: string;
   title: string;
+  role: string;
+  organisation: string;
+  location: string;
   period: string;
   discipline: string;
   lead: string;
@@ -23,17 +27,27 @@ export type Project = {
   contribution: string[];
   evidence: string[];
   hero: string;
+  heroThumbnail?: string;
   heroAlt: string;
+  heroFit?: "cover" | "contain";
+  heroPosition?: string;
   accent: "forest" | "clay" | "ochre" | "blue" | "ink";
   images: ProjectImage[];
   links: ProjectLink[];
 };
 
+const budanzaGallery = (collection.budanza as ProjectImage[]).filter(
+  (image) => image.src !== "/assets/collection/budanza-01.webp",
+);
+
 export const projects: Project[] = [
   {
     slug: "kafart",
     title: "KAFART",
-    period: "2023 - present",
+    role: "Strategic Communications Lead",
+    organisation: "Kaduna Fashion & Art Exhibition",
+    location: "Kaduna & Abuja, Nigeria",
+    period: "2023 – present",
     discipline: "Strategic communications, digital infrastructure, curatorial coordination",
     lead:
       "Building the public voice and digital memory of a multidisciplinary cultural platform in Northern Nigeria.",
@@ -55,50 +69,84 @@ export const projects: Project[] = [
       "Institutional engagement with traditional cultural leadership",
     ],
     hero: "/assets/kafart-group-pic.jpg",
+    heroThumbnail: "/assets/kafart-group-pic-preview.webp",
     heroAlt:
       "The KAFART team and participating creatives gathered at the exhibition",
+    heroPosition: "center 20%",
     accent: "forest",
     images: [
-      { src: "/assets/kafart-card-28.png", alt: "Terracotta attendee card with Al-ameen’s halftone portrait", caption: "Al-ameen’s card in the terracotta colourway.", fit: "contain" },
-      { src: "/assets/kafart-card-23.png", alt: "Navy KAFART card signed Muhammad", caption: "Muhammad’s card pairs a navy background with a cream stamp border.", fit: "contain" },
-      { src: "/assets/kafart-card-22.png", alt: "Red attendee card with Ganiyat’s portrait", caption: "Ganiyat’s portrait in the red colourway.", fit: "contain" },
-      { src: "/assets/kafart-card-21.png", alt: "Gold attendee card bearing the name Fyada", caption: "Fyada’s card in festival gold.", fit: "contain" },
-      { src: "/assets/kafart-card-20.png", alt: "Black attendee card with Auwal’s halftone portrait", caption: "Auwal’s card in black and cream.", fit: "contain" },
+      {
+        src: "/assets/kafart-card-28.png",
+        alt: "Terracotta attendee card with Al-ameen’s halftone portrait",
+        caption: "Al-ameen’s card in the terracotta colourway.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/kafart-card-23.png",
+        alt: "Navy KAFART card signed Muhammad",
+        caption: "Muhammad’s card pairs a navy background with a cream stamp border.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/kafart-card-22.png",
+        alt: "Red attendee card with Ganiyat’s portrait",
+        caption: "Ganiyat’s portrait in the red colourway.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/kafart-card-21.png",
+        alt: "Gold attendee card bearing the name Fyada",
+        caption: "Fyada’s card in festival gold.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/kafart-card-20.png",
+        alt: "Black attendee card with Auwal’s halftone portrait",
+        caption: "Auwal’s card in black and cream.",
+        fit: "contain",
+      },
       {
         src: "/assets/kafart-live-website.png",
+        thumbnail: "/assets/kafart-live-website-preview.webp",
         alt: "The KAFART website homepage for the sixth edition",
         caption:
           "The live KAFART website, built as a multilingual home for editions, exhibitors and open calls.",
+        fit: "contain",
       },
       {
         src: "/assets/kafart-hands-of-resilience.jpg",
         alt: "Muhammad guiding visitors through an exhibition",
         caption:
           "Public engagement at Hands of Resilience, a 2023 exhibition shaped around the research of KAFART's pan-African contributors.",
+        position: "center 25%",
       },
       {
         src: "/assets/kafart-panel.jpg",
         alt: "Muhammad moderating a KAFART panel with two guests",
         caption:
           "Moderating Future Forward at KAFART 2024, a discussion on heritage, sustainability, technology and African creative practice.",
+        position: "center 30%",
       },
       {
         src: "/assets/kafart-emir-audience.jpg",
         alt: "Muhammad Al-amin Yusha'u standing with the Emir during a KAFART institutional visit",
         caption:
           "During KAFART's visit to the Emir, part of the platform's relationship-building with traditional cultural leadership.",
+        position: "center 22%",
       },
       {
         src: "/assets/kafart-emir-presentation.jpg",
         alt: "The KAFART delegation presenting a framed artwork to the Emir",
         caption:
           "The KAFART delegation presenting a framed work during the visit.",
+        position: "center 25%",
       },
       {
         src: "/assets/kafart-emir-museum.jpg",
         alt: "The KAFART delegation with the Emir at the Aliyu Dan Sidi Museum and Documentation Centre",
         caption:
           "The delegation at the Aliyu Dan Sidi Museum and Documentation Centre.",
+        position: "center 22%",
       },
     ],
     links: [
@@ -114,55 +162,149 @@ export const projects: Project[] = [
   {
     slug: "hibaf",
     title: "HIBAF",
+    role: "Product Designer & Creative Developer",
+    organisation: "Hausa International Book & Arts Festival",
+    location: "London, Kaduna & Abuja",
     period: "2026",
     discipline: "Product design, creative development, cultural engagement",
     lead: "A postcard maker connecting festivalgoers across London, Kaduna and Abuja.",
-    summary: "For the sixth Hausa International Book & Arts Festival, I designed and built a personalised postcard maker for its first multi-city edition. The experience gives each city a distinct visual identity while inviting people to become part of the festival story.",
+    summary:
+      "For the sixth Hausa International Book & Arts Festival, I designed and built a personalised postcard maker for its first multi-city edition. The experience gives each city a distinct visual identity while inviting people to become part of the festival story.",
     contribution: [
       "Designed a postcard-inspired system for London, Kaduna and Abuja, combining city artwork, festival branding and a personal photo.",
       "Built an accessible city and attendee flow for individuals and groups, with live preview, photo positioning and downloadable cards.",
       "Used a shared canvas renderer for on-screen previews and 1200 × 1500 PNG exports, working within the festival’s Next.js, React and TypeScript codebase.",
       "Kept photo processing on the visitor’s device and supported recovery of their work during the visit.",
-      "Integrated the card invitation into the festival website, connecting its city designs to the maker."
+      "Integrated the card invitation into the festival website, connecting its city designs to the maker.",
     ],
     evidence: [
       "Three city designs for London, Kaduna and Abuja",
       "London · 24 October 2026; Kaduna · 4–5 December 2026; Abuja · 11 December 2026",
       "Personalised cards for individuals or groups",
-      "1200 × 1500 downloadable PNGs, rendered in the browser"
+      "1200 × 1500 downloadable PNGs, rendered in the browser",
     ],
     hero: "/assets/hibaf-cover.png",
+    heroThumbnail: "/assets/hibaf-cover-preview.webp",
     heroAlt: "The HIBAF Abuja personalised postcard design",
+    heroFit: "contain",
     accent: "forest",
     images: [
-      { src: "/assets/hibaf-card-abuja.png", alt: "Personalised HIBAF Abuja postcard", caption: "A personalised Abuja postcard created with the HIBAF card maker.", fit: "contain" },
-      { src: "/assets/hibaf-card-london.png", alt: "Personalised HIBAF London postcard", caption: "A personalised London postcard created with the HIBAF card maker.", fit: "contain" },
-      { src: "/assets/hibaf-card-kaduna.png", alt: "Personalised HIBAF Kaduna postcard", caption: "A personalised Kaduna postcard created with the HIBAF card maker.", fit: "contain" },
-      { src: "/assets/hibaf-784.png", alt: "The HIBAF website presenting three city cards", caption: "The festival website introduces a separate postcard design for each city.", fit: "contain" },
-      { src: "/assets/hibaf-785.png", alt: "Card maker showing the city selection and personalised card interface", caption: "The card maker starts by asking where the visitor will attend.", fit: "contain" },
-      { src: "/assets/hibaf-786.png", alt: "London postcard preview and photo upload controls", caption: "The London design brings its own city artwork into the postcard.", fit: "contain" },
-      { src: "/assets/hibaf-787.png", alt: "Kaduna postcard preview and photo upload controls", caption: "The Kaduna version carries the same personalisation flow with its own visual identity.", fit: "contain" },
-      { src: "/assets/hibaf-788.png", alt: "Abuja postcard preview and photo upload controls", caption: "The Abuja design completes the three-city set.", fit: "contain" }
+      {
+        src: "/assets/hibaf-card-abuja.png",
+        thumbnail: "/assets/hibaf-card-abuja-preview.webp",
+        alt: "Personalised HIBAF Abuja postcard",
+        caption: "A personalised Abuja postcard created with the HIBAF card maker.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/hibaf-card-london.png",
+        thumbnail: "/assets/hibaf-card-london-preview.webp",
+        alt: "Personalised HIBAF London postcard",
+        caption: "A personalised London postcard created with the HIBAF card maker.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/hibaf-card-kaduna.png",
+        thumbnail: "/assets/hibaf-card-kaduna-preview.webp",
+        alt: "Personalised HIBAF Kaduna postcard",
+        caption: "A personalised Kaduna postcard created with the HIBAF card maker.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/hibaf-784.png",
+        thumbnail: "/assets/hibaf-784-preview.webp",
+        alt: "The HIBAF website presenting three city cards",
+        caption: "The festival website introduces a separate postcard design for each city.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/hibaf-785.png",
+        thumbnail: "/assets/hibaf-785-preview.webp",
+        alt: "Card maker showing the city selection and personalised card interface",
+        caption: "The card maker starts by asking where the visitor will attend.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/hibaf-786.png",
+        thumbnail: "/assets/hibaf-786-preview.webp",
+        alt: "London postcard preview and photo upload controls",
+        caption: "The London design brings its own city artwork into the postcard.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/hibaf-787.png",
+        thumbnail: "/assets/hibaf-787-preview.webp",
+        alt: "Kaduna postcard preview and photo upload controls",
+        caption: "The Kaduna version carries the same personalisation flow with its own visual identity.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/hibaf-788.png",
+        thumbnail: "/assets/hibaf-788-preview.webp",
+        alt: "Abuja postcard preview and photo upload controls",
+        caption: "The Abuja design completes the three-city set.",
+        fit: "contain",
+      },
     ],
     links: [{ label: "Visit the HIBAF card maker", href: "https://hausabaf.com/your-card" }],
   },
   {
     slug: "creative-work",
     title: "Creative work",
+    role: "Visual & Brand Designer",
+    organisation: "Selected Commissions & Concepts",
+    location: "Kaduna & Abuja, Nigeria",
     period: "Selected projects",
     discipline: "Visual design, identity and cultural storytelling",
     lead: "A collection of identity, editorial and visual work made across different contexts.",
-    summary: "These selected projects bring together visual identities, posters, patterns and moments from cultural work. Some are commissioned designs; others are exploratory concepts.",
-    contribution: ["Created concept posters for the Arewa International Film Festival and an opening flyer for Cloaks Gallery.", "Designed a unity fabric pattern combining Benin Bronze masks, Nsibidi, Arewa patterns, the Abuja City Gate, Wazobia and other Nigerian references.", "Explored identity concepts for RecurX and The Queen’s Partners.", "Designed a Kaduna State two-year anniversary poster."],
-    evidence: ["Poster and identity design", "Fabric pattern exploration", "Brand concepts and cultural documentation"],
+    summary:
+      "These selected projects bring together visual identities, posters, patterns and moments from cultural work. Some are commissioned designs; others are exploratory concepts.",
+    contribution: [
+      "Created concept posters for the Arewa International Film Festival and an opening flyer for Cloaks Gallery.",
+      "Designed a unity fabric pattern combining Benin Bronze masks, Nsibidi, Arewa patterns, the Abuja City Gate, Wazobia and other Nigerian references.",
+      "Explored identity concepts for RecurX and The Queen’s Partners.",
+      "Designed a Kaduna State two-year anniversary poster.",
+    ],
+    evidence: [
+      "Poster and identity design",
+      "Fabric pattern exploration",
+      "Brand concepts and cultural documentation",
+    ],
     hero: "/assets/creative-aiff.png",
+    heroThumbnail: "/assets/creative-aiff-preview.webp",
     heroAlt: "Concept poster for the Arewa International Film Festival",
+    heroFit: "contain",
     accent: "ink",
     images: [
-      { src: "/assets/creative-cloaks.png", alt: "Cream opening-day flyer with a model in a blue abaya", caption: "Opening-day flyer for Cloaks Gallery, an abaya shop in Kaduna.", fit: "contain" },
-      { src: "/assets/creative-naija-pattern.png", alt: "Gold and indigo fabric design with repeating Nigerian symbols", caption: "For a national fabric competition, I brought Nsibidi, Arewa motifs and the Abuja City Gate into one repeat.", fit: "contain" },
-      { src: "/assets/creative-recurx.png", alt: "White rounded mark on a dark background", caption: "The RecurX concept takes its continuous curves from the idea of recurring payments.", fit: "contain" },
-      { src: "/assets/creative-kaduna-poster.png", alt: "Governor Uba Sani’s portrait surrounded by illustrated accomplishments", caption: "Poster marking Governor Uba Sani’s first two years in office in Kaduna State.", fit: "contain" },
+      {
+        src: "/assets/creative-cloaks.png",
+        thumbnail: "/assets/creative-cloaks-preview.webp",
+        alt: "Cream opening-day flyer with a model in a blue abaya",
+        caption: "Opening-day flyer for Cloaks Gallery, an abaya shop in Kaduna.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/creative-naija-pattern.png",
+        thumbnail: "/assets/creative-naija-pattern-preview.webp",
+        alt: "Gold and indigo fabric design with repeating Nigerian symbols",
+        caption:
+          "For a national fabric competition, I brought Nsibidi, Arewa motifs and the Abuja City Gate into one repeat.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/creative-recurx.png",
+        thumbnail: "/assets/creative-recurx-preview.webp",
+        alt: "White rounded mark on a dark background",
+        caption: "The RecurX concept takes its continuous curves from the idea of recurring payments.",
+        fit: "contain",
+      },
+      {
+        src: "/assets/creative-kaduna-poster.png",
+        thumbnail: "/assets/creative-kaduna-poster-preview.webp",
+        alt: "Governor Uba Sani’s portrait surrounded by illustrated accomplishments",
+        caption: "Poster marking Governor Uba Sani’s first two years in office in Kaduna State.",
+        fit: "contain",
+      },
       ...(collection.aiff as ProjectImage[]),
       ...(collection.queens as ProjectImage[]),
     ],
@@ -170,11 +312,14 @@ export const projects: Project[] = [
   },
   {
     slug: "subject-to-climate",
-    title: "SubjectToClimate Youth Engagement Committee",
+    title: "SubjectToClimate",
+    role: "Brand Communications & Engagement Fellow",
+    organisation: "SubjectToClimate / Climate Curve",
+    location: "Remote · US, Jordan, South Korea & Nigeria",
     period: "2025",
     discipline: "Youth engagement, facilitation, communications systems",
     lead:
-      "Leading the first youth committee of a climate education nonprofit from recruitment insight to an international kickoff.",
+      "Leading the first Youth Engagement Committee of a climate education nonprofit from recruitment insight to an international kickoff.",
     summary:
       "During my Climate Curve Constellations Fellowship placement at SubjectToClimate, I worked across brand communications, engagement and programme systems. The Youth Engagement Committee became the clearest expression of that work: students were invited to shape how climate change is taught, rather than appear only as the audience for it.",
     contribution: [
@@ -191,6 +336,7 @@ export const projects: Project[] = [
     ],
     hero: "/assets/subjecttoclimate-logo.png",
     heroAlt: "SubjectToClimate logo",
+    heroFit: "contain",
     accent: "clay",
     images: [
       {
@@ -198,12 +344,14 @@ export const projects: Project[] = [
         alt: "Youth Engagement Committee presentation during a video call",
         caption:
           "Introducing how student stories would inform a showcase and climate learning materials.",
+        fit: "contain",
       },
       {
         src: "/assets/yec-committee.jpg",
         alt: "Youth Engagement Committee members in a video call grid",
         caption:
           "The inaugural committee brought together young people across four countries.",
+        fit: "contain",
       },
     ],
     links: [
@@ -216,6 +364,9 @@ export const projects: Project[] = [
   {
     slug: "northern-creatives-conference",
     title: "Northern Creatives Conference",
+    role: "Kaduna State Focal Person & Rapporteur",
+    organisation: "Northern Creatives Conference",
+    location: "Kaduna & Kano, Nigeria",
     period: "2025",
     discipline: "Stakeholder engagement, partnerships, rapportage",
     lead:
@@ -235,8 +386,10 @@ export const projects: Project[] = [
       "Conference documentation and reporting",
     ],
     hero: "/assets/ncc-team.jpg",
+    heroThumbnail: "/assets/ncc-team-preview.webp",
     heroAlt:
       "Muhammad Al-amin Yusha'u with members of the Northern Creatives Conference team in Kano",
+    heroPosition: "center 22%",
     accent: "blue",
     images: [
       {
@@ -247,16 +400,12 @@ export const projects: Project[] = [
         fit: "contain",
       },
       {
-        src: "/assets/ncc-team.jpg",
-        alt: "Muhammad Al-amin Yusha'u with members of the Northern Creatives Conference team",
-        caption:
-          "With members of the Northern Creatives Conference team at the 2025 gathering in Kano.",
-      },
-      {
         src: "/assets/ncc-wonderwise.jpg",
+        thumbnail: "/assets/ncc-wonderwise-preview.webp",
         alt: "Muhammad Al-amin Yusha'u with members of Wonderwise Productions",
         caption:
           "With Wonderwise Productions, one of the Kaduna creative-sector partners I brought into the conference network.",
+        position: "center 22%",
       },
     ],
     links: [
@@ -272,8 +421,11 @@ export const projects: Project[] = [
   },
   {
     slug: "editorial-work",
-    title: "The Revue and Aké Review",
-    period: "2022 - 2023",
+    title: "The Revue & Aké Review",
+    role: "Associate Editor & Contributing Writer",
+    organisation: "The Revue & Aké Review",
+    location: "Nigeria",
+    period: "2022 – 2023",
     discipline: "Editorial development, writing, cultural research",
     lead:
       "Turning volunteer research and original writing into durable editorial records of art, fashion and cultural life.",
@@ -293,15 +445,9 @@ export const projects: Project[] = [
     ],
     hero: "/assets/ake-rev-2023.jpg",
     heroAlt: "Cover of Aké Review Volume X, published in 2023",
+    heroFit: "contain",
     accent: "ochre",
     images: [
-      {
-        src: "/assets/ake-rev-2023.jpg",
-        alt: "Cover of Aké Review Volume X, published in 2023",
-        caption:
-          "Aké Review Volume X, where Good Old Days was published in print.",
-        fit: "contain",
-      },
       {
         src: "/assets/revue-2022-cover.png",
         alt: "Cover of The Revue 2022",
@@ -332,7 +478,7 @@ export const projects: Project[] = [
         src: "/assets/revue-2023-feature-1.png",
         alt: "Opening page of a Revue 2023 feature about Tuareg craft",
         caption:
-          "The Pick: Crafty Items - Housewares and Keepsakes, a 2023 feature on Tuareg material culture.",
+          "The Pick: Crafty Items – Housewares and Keepsakes, a 2023 feature on Tuareg material culture.",
         fit: "contain",
       },
       {
@@ -346,6 +492,7 @@ export const projects: Project[] = [
         alt: "The printed Good Old Days page in Aké Review 2023",
         caption:
           "Good Old Days in Aké Review 2023, a short non-fiction piece about memory, family and returning.",
+        fit: "contain",
       },
     ],
     links: [
@@ -358,7 +505,10 @@ export const projects: Project[] = [
   {
     slug: "alama",
     title: "Alama",
-    period: "2025 - present",
+    role: "Concept Lead & Researcher",
+    organisation: "Alama (Startup Challenge Runner-Up)",
+    location: "Nigeria",
+    period: "2025 – present",
     discipline: "Early-stage concept, cultural technology, research",
     lead:
       "An offline-first concept for helping African craft communities document and protect cultural work.",
@@ -378,15 +528,9 @@ export const projects: Project[] = [
     ],
     hero: "/assets/alama-runner-up.jpg",
     heroAlt: "Alama second-place winner announcement",
+    heroFit: "contain",
     accent: "blue",
-    images: [
-      {
-        src: "/assets/alama-runner-up.jpg",
-        alt: "Second-place announcement for the Alama concept",
-        caption:
-          "Alama placed second in the 2025 Building, Breaking and Believing in Nigeria Startup Challenge.",
-      },
-    ],
+    images: [],
     links: [
       {
         label: "View the public concept post",
@@ -397,6 +541,9 @@ export const projects: Project[] = [
   {
     slug: "budanza",
     title: "Budanza",
+    role: "Brand Identity Designer",
+    organisation: "Budanza Real Estate & Development",
+    location: "Nigeria",
     period: "2025",
     discipline: "Brand identity, visual system",
     lead:
@@ -415,23 +562,84 @@ export const projects: Project[] = [
     ],
     hero: "/assets/collection/budanza-01.webp",
     heroAlt: "Budanza blue business card mockup with the geometric monogram",
+    heroFit: "contain",
     accent: "ink",
     images: [
-      ...(collection.budanza as ProjectImage[]),
+      ...budanzaGallery,
       {
         src: "/assets/budanza-brand.jpg",
         alt: "Budanza business card identity in warm grey",
         caption:
           "The monogram, repeat pattern and a light business-card application.",
+        fit: "contain",
       },
     ],
     links: [],
   },
 ];
 
+export const skills = [
+  {
+    title: "Strategic communications",
+    detail:
+      "Communication planning, institutional voice, campaign development and public-facing narratives.",
+  },
+  {
+    title: "Social media management",
+    detail:
+      "Content calendars, platform-specific copy, community engagement, event coverage and campaign coordination.",
+  },
+  {
+    title: "Visual design and brand identity",
+    detail:
+      "Brand systems, campaign assets, publication layouts and digital or print communication materials.",
+  },
+  {
+    title: "Editorial development",
+    detail:
+      "Editing, copywriting, research translation, reports and long-form cultural publishing.",
+  },
+  {
+    title: "Cultural programming",
+    detail:
+      "Exhibition development, curatorial coordination, thematic framing and programme delivery.",
+  },
+  {
+    title: "Research and reporting",
+    detail:
+      "Desk research, stakeholder mapping, evidence synthesis and post-programme documentation.",
+  },
+  {
+    title: "Engagement and facilitation",
+    detail:
+      "Youth engagement, community outreach, workshops, panels and cross-cultural remote sessions.",
+  },
+  {
+    title: "Web and content systems",
+    detail:
+      "Website structure, multilingual publishing, archives, directories, forms and content workflows.",
+  },
+];
+
+export const tools = [
+  "Next.js, React and TypeScript",
+  "Astro",
+  "Adobe Illustrator",
+  "Adobe InDesign",
+  "Adobe Photoshop",
+  "Airtable",
+  "Google Sheets",
+  "Google Docs, Slides and Drive",
+  "Canva",
+  "Website content management",
+  "Social publishing and analytics",
+  "Zoom and Mentimeter",
+  "Microsoft Office",
+];
+
 export const experience = [
   {
-    period: "2023 - now",
+    period: "2023 – now",
     role: "Strategic Communications Lead",
     place: "KAFART",
     detail:
@@ -452,7 +660,7 @@ export const experience = [
       "Built a 100+ stakeholder pipeline, coordinated Kaduna partnerships including Wonderwise Productions and documented the conference as rapporteur.",
   },
   {
-    period: "2022 - 2024",
+    period: "2022 – 2024",
     role: "Editorial Assistant and Associate Editor",
     place: "The Revue",
     detail:
@@ -462,8 +670,18 @@ export const experience = [
 
 export const recognition = [
   "Better Futures Fellow, Critical Explorations Initiative",
-  "Second place, DOWA x ConnectED Diaspora x NiDCOM Startup Challenge",
+  "Second place, DOWA × ConnectED Diaspora × NiDCOM Startup Challenge",
   "Climate Curve Constellations Fellow",
   "Deputy Cohort Lead, AMS 4.0 Creative Industries and Cultural Preservation cohort",
   "Two-cycle YELF mentee in creative writing",
+];
+
+export const affiliations = [
+  "KAFART",
+  "HIBAF",
+  "SubjectToClimate",
+  "Aké Review",
+  "The Revue",
+  "Northern Creatives Conference",
+  "Better Futures Fellowship",
 ];

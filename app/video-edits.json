@@ -2,216 +2,345 @@
   {
     "title": "Shop launch",
     "group": "KAFART",
-    "src": "/videos/edit-01.mp4"
+    "src": "/videos/edit-01.mp4",
+    "duration": "1:17",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "Tickets explainer",
     "group": "KAFART",
-    "src": "/videos/edit-02.mp4"
+    "src": "/videos/edit-02.mp4",
+    "duration": "1:18",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "8K thank you",
     "group": "KAFART",
-    "src": "/videos/edit-03.mp4"
+    "src": "/videos/edit-03.mp4",
+    "duration": "0:17",
+    "width": 1080,
+    "height": 1350
   },
   {
     "title": "Two weeks to go · November",
     "group": "KAFART",
-    "src": "/videos/edit-04.mp4"
+    "src": "/videos/edit-04.mp4",
+    "duration": "1:01",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "Volunteer meeting",
     "group": "KAFART",
-    "src": "/videos/edit-05.mp4"
+    "src": "/videos/edit-05.mp4",
+    "duration": "0:54",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "Meet our volunteers",
     "group": "KAFART",
-    "src": "/videos/edit-06.mp4"
+    "src": "/videos/edit-06.mp4",
+    "duration": "0:29",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "The big cheque",
     "group": "In conversation with Kemi",
-    "src": "/videos/edit-07.mp4"
+    "src": "/videos/edit-07.mp4",
+    "duration": "0:59",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "No one’s coming to save you",
     "group": "In conversation with Kemi",
-    "src": "/videos/edit-08.mp4"
+    "src": "/videos/edit-08.mp4",
+    "duration": "0:54",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "Not all money",
     "group": "In conversation with Kemi",
-    "src": "/videos/edit-09.mp4"
+    "src": "/videos/edit-09.mp4",
+    "duration": "1:03",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "The MacKenzie Scott story",
     "group": "In conversation with Kemi",
-    "src": "/videos/edit-10.mp4"
+    "src": "/videos/edit-10.mp4",
+    "duration": "0:59",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "The New York Times test",
     "group": "In conversation with Kemi",
-    "src": "/videos/edit-11.mp4"
+    "src": "/videos/edit-11.mp4",
+    "duration": "1:02",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "Be in space together",
     "group": "In conversation with Kemi",
-    "src": "/videos/edit-12.mp4"
+    "src": "/videos/edit-12.mp4",
+    "duration": "0:54",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "Connective tissue",
     "group": "In conversation with Kemi",
-    "src": "/videos/edit-13.mp4"
+    "src": "/videos/edit-13.mp4",
+    "duration": "0:58",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "KIVTSD × KAFART",
     "group": "KIVTSD",
-    "src": "/videos/edit-14.mp4"
+    "src": "/videos/edit-14.mp4",
+    "duration": "2:39",
+    "width": 1280,
+    "height": 720
   },
   {
     "title": "Lawal",
     "group": "KIVTSD",
-    "src": "/videos/edit-15.mp4"
+    "src": "/videos/edit-15.mp4",
+    "duration": "3:22",
+    "width": 1280,
+    "height": 720
   },
   {
     "title": "Jerry",
     "group": "KIVTSD",
-    "src": "/videos/edit-16.mp4"
+    "src": "/videos/edit-16.mp4",
+    "duration": "1:25",
+    "width": 1280,
+    "height": 720
   },
   {
     "title": "Manasseh",
     "group": "KIVTSD",
-    "src": "/videos/edit-17.mp4"
+    "src": "/videos/edit-17.mp4",
+    "duration": "2:35",
+    "width": 1280,
+    "height": 720
   },
   {
     "title": "Comfort",
     "group": "KIVTSD",
-    "src": "/videos/edit-18.mp4"
+    "src": "/videos/edit-18.mp4",
+    "duration": "3:20",
+    "width": 1280,
+    "height": 720
   },
   {
     "title": "Di’Ja · guest performer",
     "group": "KAFART",
-    "src": "/videos/edit-19.mp4"
+    "src": "/videos/edit-19.mp4",
+    "duration": "0:41",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "KAFART on Snapchat",
     "group": "KAFART",
-    "src": "/videos/edit-21.mp4"
+    "src": "/videos/edit-21.mp4",
+    "duration": "0:36",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "MBIT promo · portrait",
     "group": "KAFART",
-    "src": "/videos/edit-22.mp4"
+    "src": "/videos/edit-22.mp4",
+    "duration": "1:40",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "MBIT promo · landscape",
     "group": "KAFART",
-    "src": "/videos/edit-23.mp4"
+    "src": "/videos/edit-23.mp4",
+    "duration": "1:37",
+    "width": 1920,
+    "height": 1080
   },
   {
     "title": "Curatorial team",
     "group": "KAFART",
-    "src": "/videos/edit-24.mp4"
+    "src": "/videos/edit-24.mp4",
+    "duration": "0:50",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "New dates",
     "group": "KAFART",
-    "src": "/videos/edit-25.mp4"
+    "src": "/videos/edit-25.mp4",
+    "duration": "0:49",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "Vendors extended",
     "group": "KAFART",
-    "src": "/videos/edit-26.mp4"
+    "src": "/videos/edit-26.mp4",
+    "duration": "0:28",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "Exhibiting designers · teaser",
     "group": "KAFART",
-    "src": "/videos/edit-27.mp4"
+    "src": "/videos/edit-27.mp4",
+    "duration": "0:31",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "Exhibiting designers",
     "group": "KAFART",
-    "src": "/videos/edit-28.mp4"
+    "src": "/videos/edit-28.mp4",
+    "duration": "2:12",
+    "width": 720,
+    "height": 1280
   },
   {
     "title": "Two weeks to go",
     "group": "KAFART",
-    "src": "/videos/edit-29.mp4"
+    "src": "/videos/edit-29.mp4",
+    "duration": "0:59",
+    "width": 1080,
+    "height": 1920
   },
   {
     "title": "Exhibiting artists",
     "group": "KAFART",
-    "src": "/videos/edit-30.mp4"
+    "src": "/videos/edit-30.mp4",
+    "duration": "2:17",
+    "width": 540,
+    "height": 960
   },
   {
     "title": "Circular theme",
     "group": "KAFART 2026",
-    "src": "/videos/edit-31.mp4"
+    "src": "/videos/edit-31.mp4",
+    "duration": "0:20",
+    "width": 720,
+    "height": 1280
   },
   {
     "title": "Clay pots",
     "group": "KAFART 2026",
-    "src": "/videos/edit-32.mp4"
+    "src": "/videos/edit-32.mp4",
+    "duration": "1:00",
+    "width": 720,
+    "height": 1280
   },
   {
     "title": "One month to go",
     "group": "KAFART 2026",
-    "src": "/videos/edit-33.mp4"
+    "src": "/videos/edit-33.mp4",
+    "duration": "0:24",
+    "width": 720,
+    "height": 1280
   },
   {
     "title": "Vendors",
     "group": "KAFART 2026",
-    "src": "/videos/edit-34.mp4"
+    "src": "/videos/edit-34.mp4",
+    "duration": "0:23",
+    "width": 720,
+    "height": 1280
   },
   {
     "title": "Tickets out now",
     "group": "KAFART 2026",
-    "src": "/videos/edit-35.mp4"
+    "src": "/videos/edit-35.mp4",
+    "duration": "0:26",
+    "width": 720,
+    "height": 1280
   },
   {
     "title": "KAFART 6 promo",
     "group": "KAFART 2026",
-    "src": "/videos/edit-36.mp4"
+    "src": "/videos/edit-36.mp4",
+    "duration": "0:46",
+    "width": 720,
+    "height": 1280
   },
   {
-    "title": "1 WEEK",
+    "title": "One week to go",
     "group": "KAFART 2024",
-    "src": "/videos/edit-37.mp4"
+    "src": "/videos/edit-37.mp4",
+    "duration": "0:30",
+    "width": 720,
+    "height": 1280
   },
   {
-    "title": "30 DAYS TO GO",
+    "title": "30 days to go",
     "group": "KAFART 2024",
-    "src": "/videos/edit-38.mp4"
+    "src": "/videos/edit-38.mp4",
+    "duration": "1:03",
+    "width": 720,
+    "height": 1280
   },
   {
-    "title": "KAFART 2 WEEKS TO GO",
+    "title": "Two weeks to go",
     "group": "KAFART 2024",
-    "src": "/videos/edit-39.mp4"
+    "src": "/videos/edit-39.mp4",
+    "duration": "0:25",
+    "width": 720,
+    "height": 1280
   },
   {
-    "title": "KAFART Promotional Video",
+    "title": "Festival promotional film",
     "group": "KAFART 2024",
-    "src": "/videos/edit-40.mp4"
+    "src": "/videos/edit-40.mp4",
+    "duration": "0:46",
+    "width": 720,
+    "height": 1280
   },
   {
-    "title": "5 DAYS TO GO",
+    "title": "Five days to go",
     "group": "KAFART 2024",
-    "src": "/videos/edit-41.mp4"
+    "src": "/videos/edit-41.mp4",
+    "duration": "0:15",
+    "width": 720,
+    "height": 1280
   },
   {
-    "title": "ANNOUNCING EXHIBITING ARTISTS",
+    "title": "Announcing exhibiting artists",
     "group": "KAFART 2024",
-    "src": "/videos/edit-42.mp4"
+    "src": "/videos/edit-42.mp4",
+    "duration": "0:31",
+    "width": 720,
+    "height": 1280
   },
   {
-    "title": "ANNOUNCING EXHIBITING DESIGNERS",
+    "title": "Announcing exhibiting designers",
     "group": "KAFART 2024",
-    "src": "/videos/edit-43.mp4"
+    "src": "/videos/edit-43.mp4",
+    "duration": "0:31",
+    "width": 720,
+    "height": 1280
   },
   {
-    "title": "KAFART PROMOTIONAL 2024",
+    "title": "KAFART 2024 promo",
     "group": "KAFART 2024",
-    "src": "/videos/edit-44.mp4"
+    "src": "/videos/edit-44.mp4",
+    "duration": "0:46",
+    "width": 720,
+    "height": 1280
   }
 ]

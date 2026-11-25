@@ -1,66 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import { CopyEmail } from "../components/CopyEmail";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
-import { experience, recognition } from "../portfolio-data";
+import { imageSize } from "../image-meta";
+import { experience, recognition, skills, tools } from "../portfolio-data";
 import { sitePath } from "../site-path";
 
-const skills = [
-  {
-    title: "Strategic communications",
-    detail:
-      "Communication planning, institutional voice, campaign development and public-facing narratives.",
-  },
-  {
-    title: "Social media management",
-    detail:
-      "Content calendars, platform-specific copy, community engagement, event coverage and campaign coordination.",
-  },
-  {
-    title: "Visual design and brand identity",
-    detail:
-      "Brand systems, campaign assets, publication layouts and digital or print communication materials.",
-  },
-  {
-    title: "Editorial development",
-    detail:
-      "Editing, copywriting, research translation, reports and long-form cultural publishing.",
-  },
-  {
-    title: "Cultural programming",
-    detail:
-      "Exhibition development, curatorial coordination, thematic framing and programme delivery.",
-  },
-  {
-    title: "Research and reporting",
-    detail:
-      "Desk research, stakeholder mapping, evidence synthesis and post-programme documentation.",
-  },
-  {
-    title: "Engagement and facilitation",
-    detail:
-      "Youth engagement, community outreach, workshops, panels and cross-cultural remote sessions.",
-  },
-  {
-    title: "Web and content systems",
-    detail:
-      "Website structure, multilingual publishing, archives, directories, forms and content workflows.",
-  },
-];
-
-const tools = [
-  "Adobe Illustrator",
-  "Adobe InDesign",
-  "Adobe Photoshop",
-  "Airtable",
-  "Google Sheets",
-  "Google Docs, Slides and Drive",
-  "Canva",
-  "Website content management",
-  "Social publishing and analytics",
-  "Zoom and Mentimeter",
-  "Microsoft Office",
-];
+const headshotDims = imageSize("/assets/about-headshot.jpg");
+const fellowsDims = imageSize("/assets/better-futures-fellows.png");
 
 export const metadata: Metadata = {
   title: "About",
@@ -95,6 +43,9 @@ export default function AboutPage() {
             <img
               src={sitePath("/assets/about-headshot.jpg")}
               alt="Portrait of Muhammad Al-amin Yusha'u"
+              width={headshotDims.width}
+              height={headshotDims.height}
+              fetchPriority="high"
             />
             <figcaption>Muhammad Al-amin Yusha&apos;u.</figcaption>
           </figure>
@@ -107,19 +58,18 @@ export default function AboutPage() {
           <div className="prose">
             <p>
               Alongside cultural work, I am completing a BSc in Cyber Security
-              at the Air Force Institute of Technology with a 4.83/5.00 CGPA.
-              My thesis examines gradient-based detection of low-variance data
-              poisoning in large-language-model fine-tuning.
+              at the Air Force Institute of Technology with a{" "}
+              <span className="tabular">4.83/5.00</span> CGPA. My thesis
+              examines gradient-based detection of low-variance data poisoning
+              in large-language-model fine-tuning.
             </p>
             <p>
-              That training does not replace the cultural practice. It gives
-              it another lens. I can ask more useful questions about digital
+              That training does not replace the cultural practice. It gives it
+              another lens. I can ask more useful questions about digital
               access, data protection, verification and the responsibilities
               that arrive when a cultural organisation becomes a data holder.
             </p>
-            <p>
-              I work in English and Hausa. I am based in Abuja, Nigeria.
-            </p>
+            <p>I work in English and Hausa. I am based in Abuja, Nigeria.</p>
           </div>
         </section>
 
@@ -166,7 +116,7 @@ export default function AboutPage() {
           <div className="timeline timeline-full">
             {experience.map((item) => (
               <article key={`${item.place}-${item.role}`}>
-                <span>{item.period}</span>
+                <span className="tabular">{item.period}</span>
                 <div>
                   <h3>{item.role}</h3>
                   <p className="timeline-place">{item.place}</p>
@@ -184,8 +134,7 @@ export default function AboutPage() {
               <p>
                 Institutions matter, but so do the people who model a rigorous
                 way of working. My practice has been shaped through close work
-                and mentorship across literature, curating, climate and
-                culture.
+                and mentorship across literature, curating, climate and culture.
               </p>
             </div>
             <div className="learning-list">
@@ -214,9 +163,7 @@ export default function AboutPage() {
             <h2>Recognition</h2>
             <ul>
               {recognition.map((item) => (
-                <li key={item}>
-                  {item}
-                </li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
@@ -224,6 +171,10 @@ export default function AboutPage() {
             <img
               src={sitePath("/assets/better-futures-fellows.png")}
               alt="Better Futures Fellowship cohort page including Muhammad"
+              width={fellowsDims.width}
+              height={fellowsDims.height}
+              loading="lazy"
+              decoding="async"
             />
             <figcaption>
               The Better Futures Fellowship brought together questions of
@@ -234,13 +185,15 @@ export default function AboutPage() {
 
         <section className="page-shell about-contact">
           <h2>Let&apos;s work together.</h2>
-          <p>
-            <a href="mailto:alaminyushau234@gmail.com">
+          <div className="about-contact-links">
+            <a className="text-link" href="mailto:alaminyushau234@gmail.com">
               alaminyushau234@gmail.com
             </a>
-            <br />
-            <a href="tel:+2348081249489">+234 808 124 9489</a>
-          </p>
+            <CopyEmail />
+            <a className="text-link tabular" href="tel:+2348081249489">
+              +234 808 124 9489
+            </a>
+          </div>
         </section>
       </main>
       <SiteFooter />

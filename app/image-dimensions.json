@@ -1,0 +1,610 @@
+{
+  "/assets/about-headshot.jpg": {
+    "width": 1232,
+    "height": 1233
+  },
+  "/assets/ake-good-old-days.jpg": {
+    "width": 1350,
+    "height": 1800
+  },
+  "/assets/ake-rev-2023.jpg": {
+    "width": 297,
+    "height": 420
+  },
+  "/assets/alama-runner-up.jpg": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/assets/better-futures-fellows.png": {
+    "width": 1100,
+    "height": 850
+  },
+  "/assets/budanza-brand.jpg": {
+    "width": 1600,
+    "height": 1200
+  },
+  "/assets/collection/aiff-01.webp": {
+    "width": 1081,
+    "height": 1350
+  },
+  "/assets/collection/aiff-02.webp": {
+    "width": 1081,
+    "height": 1350
+  },
+  "/assets/collection/aiff-03.webp": {
+    "width": 1081,
+    "height": 1350
+  },
+  "/assets/collection/aiff-04.webp": {
+    "width": 1081,
+    "height": 1350
+  },
+  "/assets/collection/aiff-05.webp": {
+    "width": 1081,
+    "height": 1350
+  },
+  "/assets/collection/aiff-06.webp": {
+    "width": 1081,
+    "height": 1350
+  },
+  "/assets/collection/budanza-01.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "/assets/collection/budanza-02.webp": {
+    "width": 1050,
+    "height": 600
+  },
+  "/assets/collection/budanza-03.webp": {
+    "width": 1050,
+    "height": 600
+  },
+  "/assets/collection/kemi-01.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "/assets/collection/kemi-02.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "/assets/collection/kemi-03.webp": {
+    "width": 1350,
+    "height": 1800
+  },
+  "/assets/collection/kemi-04.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "/assets/collection/kemi-05.webp": {
+    "width": 1350,
+    "height": 1800
+  },
+  "/assets/collection/kemi-06.webp": {
+    "width": 1350,
+    "height": 1800
+  },
+  "/assets/collection/kemi-07.webp": {
+    "width": 1350,
+    "height": 1800
+  },
+  "/assets/collection/kemi-08.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "/assets/collection/kemi-09.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "/assets/collection/kemi-10.webp": {
+    "width": 1350,
+    "height": 1800
+  },
+  "/assets/collection/merch-01.webp": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/assets/collection/merch-02.webp": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/assets/collection/merch-03.webp": {
+    "width": 1200,
+    "height": 1800
+  },
+  "/assets/collection/merch-04.webp": {
+    "width": 1200,
+    "height": 1800
+  },
+  "/assets/collection/merch-05.webp": {
+    "width": 1563,
+    "height": 1800
+  },
+  "/assets/collection/merch-06.webp": {
+    "width": 1563,
+    "height": 1800
+  },
+  "/assets/collection/merch-07.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-08.webp": {
+    "width": 941,
+    "height": 1672
+  },
+  "/assets/collection/merch-09.webp": {
+    "width": 941,
+    "height": 1672
+  },
+  "/assets/collection/merch-10.webp": {
+    "width": 941,
+    "height": 1672
+  },
+  "/assets/collection/merch-11.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/collection/merch-12.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/collection/merch-13.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-14.webp": {
+    "width": 941,
+    "height": 1672
+  },
+  "/assets/collection/merch-15.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-16.webp": {
+    "width": 941,
+    "height": 1672
+  },
+  "/assets/collection/merch-17.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-18.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-19.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-20.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-21.webp": {
+    "width": 775,
+    "height": 818
+  },
+  "/assets/collection/merch-22.webp": {
+    "width": 941,
+    "height": 1672
+  },
+  "/assets/collection/merch-23.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-24.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-25.webp": {
+    "width": 941,
+    "height": 1672
+  },
+  "/assets/collection/merch-26.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-27.webp": {
+    "width": 941,
+    "height": 1672
+  },
+  "/assets/collection/merch-28.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-29.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/assets/collection/merch-30.webp": {
+    "width": 941,
+    "height": 1672
+  },
+  "/assets/collection/merch-31.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/collection/merch-32.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/collection/queens-01.webp": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/assets/collection/queens-02.webp": {
+    "width": 1800,
+    "height": 1013
+  },
+  "/assets/collection/queens-03.webp": {
+    "width": 1800,
+    "height": 1013
+  },
+  "/assets/collection/symbols-01.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/assets/collection/symbols-02.webp": {
+    "width": 1081,
+    "height": 1080
+  },
+  "/assets/collection/symbols-03.webp": {
+    "width": 1081,
+    "height": 1080
+  },
+  "/assets/collection/symbols-04.webp": {
+    "width": 1081,
+    "height": 1080
+  },
+  "/assets/collection/trifold-01.webp": {
+    "width": 1350,
+    "height": 1800
+  },
+  "/assets/collection/trifold-02.webp": {
+    "width": 1350,
+    "height": 1800
+  },
+  "/assets/creative-aiff-preview.webp": {
+    "width": 769,
+    "height": 960
+  },
+  "/assets/creative-aiff.png": {
+    "width": 1081,
+    "height": 1350
+  },
+  "/assets/creative-cloaks-preview.webp": {
+    "width": 960,
+    "height": 960
+  },
+  "/assets/creative-cloaks.png": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/assets/creative-kaduna-poster-preview.webp": {
+    "width": 768,
+    "height": 960
+  },
+  "/assets/creative-kaduna-poster.png": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/assets/creative-naija-pattern-preview.webp": {
+    "width": 529,
+    "height": 960
+  },
+  "/assets/creative-naija-pattern.png": {
+    "width": 686,
+    "height": 1246
+  },
+  "/assets/creative-recurx-preview.webp": {
+    "width": 960,
+    "height": 960
+  },
+  "/assets/creative-recurx.png": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/assets/hibaf-784-preview.webp": {
+    "width": 960,
+    "height": 540
+  },
+  "/assets/hibaf-784.png": {
+    "width": 1800,
+    "height": 1013
+  },
+  "/assets/hibaf-785-preview.webp": {
+    "width": 960,
+    "height": 540
+  },
+  "/assets/hibaf-785.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/assets/hibaf-786-preview.webp": {
+    "width": 960,
+    "height": 540
+  },
+  "/assets/hibaf-786.png": {
+    "width": 1800,
+    "height": 1013
+  },
+  "/assets/hibaf-787-preview.webp": {
+    "width": 960,
+    "height": 540
+  },
+  "/assets/hibaf-787.png": {
+    "width": 1800,
+    "height": 1013
+  },
+  "/assets/hibaf-788-preview.webp": {
+    "width": 960,
+    "height": 540
+  },
+  "/assets/hibaf-788.png": {
+    "width": 1800,
+    "height": 1013
+  },
+  "/assets/hibaf-card-abuja-preview.webp": {
+    "width": 768,
+    "height": 960
+  },
+  "/assets/hibaf-card-abuja.png": {
+    "width": 1200,
+    "height": 1500
+  },
+  "/assets/hibaf-card-kaduna-preview.webp": {
+    "width": 768,
+    "height": 960
+  },
+  "/assets/hibaf-card-kaduna.png": {
+    "width": 1200,
+    "height": 1500
+  },
+  "/assets/hibaf-card-london-preview.webp": {
+    "width": 768,
+    "height": 960
+  },
+  "/assets/hibaf-card-london.png": {
+    "width": 1200,
+    "height": 1500
+  },
+  "/assets/hibaf-cover-preview.webp": {
+    "width": 960,
+    "height": 951
+  },
+  "/assets/hibaf-cover.png": {
+    "width": 1007,
+    "height": 998
+  },
+  "/assets/kafart-2026-card-guide-preview.webp": {
+    "width": 800,
+    "height": 1000
+  },
+  "/assets/kafart-2026-card-guide.png": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/assets/kafart-2026-ticket-1-preview.webp": {
+    "width": 900,
+    "height": 327
+  },
+  "/assets/kafart-2026-ticket-1.png": {
+    "width": 2200,
+    "height": 800
+  },
+  "/assets/kafart-2026-ticket-2-preview.webp": {
+    "width": 900,
+    "height": 327
+  },
+  "/assets/kafart-2026-ticket-2.png": {
+    "width": 2201,
+    "height": 800
+  },
+  "/assets/kafart-2026-ticket-3-preview.webp": {
+    "width": 900,
+    "height": 328
+  },
+  "/assets/kafart-2026-ticket-3.png": {
+    "width": 2200,
+    "height": 801
+  },
+  "/assets/kafart-2026-ticket-4-preview.webp": {
+    "width": 900,
+    "height": 328
+  },
+  "/assets/kafart-2026-ticket-4.png": {
+    "width": 2201,
+    "height": 801
+  },
+  "/assets/kafart-card-20.png": {
+    "width": 1132,
+    "height": 1428
+  },
+  "/assets/kafart-card-21.png": {
+    "width": 1132,
+    "height": 1428
+  },
+  "/assets/kafart-card-22.png": {
+    "width": 1132,
+    "height": 1428
+  },
+  "/assets/kafart-card-23.png": {
+    "width": 1132,
+    "height": 1428
+  },
+  "/assets/kafart-card-28.png": {
+    "width": 1132,
+    "height": 1428
+  },
+  "/assets/kafart-emir-audience.jpg": {
+    "width": 738,
+    "height": 738
+  },
+  "/assets/kafart-emir-museum.jpg": {
+    "width": 1080,
+    "height": 1081
+  },
+  "/assets/kafart-emir-presentation.jpg": {
+    "width": 1080,
+    "height": 1081
+  },
+  "/assets/kafart-graphic-01-preview.webp": {
+    "width": 900,
+    "height": 900
+  },
+  "/assets/kafart-graphic-01.png": {
+    "width": 1800,
+    "height": 1800
+  },
+  "/assets/kafart-graphic-02-preview.webp": {
+    "width": 900,
+    "height": 900
+  },
+  "/assets/kafart-graphic-02.png": {
+    "width": 1800,
+    "height": 1799
+  },
+  "/assets/kafart-graphic-03-preview.webp": {
+    "width": 800,
+    "height": 1000
+  },
+  "/assets/kafart-graphic-03.png": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/assets/kafart-graphic-04-preview.webp": {
+    "width": 801,
+    "height": 1000
+  },
+  "/assets/kafart-graphic-04.png": {
+    "width": 1081,
+    "height": 1350
+  },
+  "/assets/kafart-graphic-05-preview.webp": {
+    "width": 800,
+    "height": 1000
+  },
+  "/assets/kafart-graphic-05.png": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/assets/kafart-graphic-06-preview.webp": {
+    "width": 800,
+    "height": 1000
+  },
+  "/assets/kafart-graphic-06.png": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/assets/kafart-graphic-07-preview.webp": {
+    "width": 801,
+    "height": 1000
+  },
+  "/assets/kafart-graphic-07.png": {
+    "width": 1081,
+    "height": 1350
+  },
+  "/assets/kafart-graphic-08-preview.webp": {
+    "width": 900,
+    "height": 900
+  },
+  "/assets/kafart-graphic-08.png": {
+    "width": 1800,
+    "height": 1800
+  },
+  "/assets/kafart-graphic-09-preview.webp": {
+    "width": 750,
+    "height": 1000
+  },
+  "/assets/kafart-graphic-09.png": {
+    "width": 900,
+    "height": 1200
+  },
+  "/assets/kafart-group-pic-preview.webp": {
+    "width": 960,
+    "height": 640
+  },
+  "/assets/kafart-group-pic.jpg": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/assets/kafart-hands-of-resilience-noir.jpg": {
+    "width": 960,
+    "height": 1280
+  },
+  "/assets/kafart-hands-of-resilience.jpg": {
+    "width": 960,
+    "height": 1280
+  },
+  "/assets/kafart-live-website-preview.webp": {
+    "width": 960,
+    "height": 540
+  },
+  "/assets/kafart-live-website.png": {
+    "width": 1800,
+    "height": 1012
+  },
+  "/assets/kafart-panel.jpg": {
+    "width": 640,
+    "height": 640
+  },
+  "/assets/ncc-focal-person.jpg": {
+    "width": 720,
+    "height": 900
+  },
+  "/assets/ncc-team-preview.webp": {
+    "width": 960,
+    "height": 721
+  },
+  "/assets/ncc-team.jpg": {
+    "width": 1800,
+    "height": 1351
+  },
+  "/assets/ncc-wonderwise-preview.webp": {
+    "width": 960,
+    "height": 720
+  },
+  "/assets/ncc-wonderwise.jpg": {
+    "width": 1800,
+    "height": 1350
+  },
+  "/assets/portrait.jpg": {
+    "width": 929,
+    "height": 929
+  },
+  "/assets/revue-2022-cover.png": {
+    "width": 888,
+    "height": 1300
+  },
+  "/assets/revue-2022-credits.png": {
+    "width": 888,
+    "height": 1300
+  },
+  "/assets/revue-2023-cover.png": {
+    "width": 888,
+    "height": 1300
+  },
+  "/assets/revue-2023-credits.png": {
+    "width": 888,
+    "height": 1300
+  },
+  "/assets/revue-2023-feature-1.png": {
+    "width": 888,
+    "height": 1300
+  },
+  "/assets/revue-2023-feature-2.png": {
+    "width": 888,
+    "height": 1300
+  },
+  "/assets/subjecttoclimate-logo.png": {
+    "width": 800,
+    "height": 207
+  },
+  "/assets/yec-committee.jpg": {
+    "width": 1366,
+    "height": 768
+  },
+  "/assets/yec-presentation.jpg": {
+    "width": 1366,
+    "height": 768
+  }
+}
