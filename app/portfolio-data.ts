@@ -2,6 +2,7 @@ import collection from "./creative-collection.json";
 
 export type ProjectImage = {
   src: string;
+  thumbnail?: string;
   alt: string;
   caption: string;
   fit?: "cover" | "contain";
@@ -58,11 +59,11 @@ export const projects: Project[] = [
       "The KAFART team and participating creatives gathered at the exhibition",
     accent: "forest",
     images: [
-      { src: "/assets/kafart-card-28.png", alt: "Example personalised KAFART 6 attendee card", caption: "A personalised KAFART 6 card, generated with the festival card maker.", fit: "contain" },
-      { src: "/assets/kafart-card-23.png", alt: "Example personalised KAFART 6 attendee card", caption: "A personalised KAFART 6 card, generated with the festival card maker.", fit: "contain" },
-      { src: "/assets/kafart-card-22.png", alt: "Example personalised KAFART 6 attendee card", caption: "A personalised KAFART 6 card, generated with the festival card maker.", fit: "contain" },
-      { src: "/assets/kafart-card-21.png", alt: "Example personalised KAFART 6 attendee card", caption: "A personalised KAFART 6 card, generated with the festival card maker.", fit: "contain" },
-      { src: "/assets/kafart-card-20.png", alt: "Example personalised KAFART 6 attendee card", caption: "A personalised KAFART 6 card, generated with the festival card maker.", fit: "contain" },
+      { src: "/assets/kafart-card-28.png", alt: "Terracotta attendee card with Al-ameen’s halftone portrait", caption: "Al-ameen’s card in the terracotta colourway.", fit: "contain" },
+      { src: "/assets/kafart-card-23.png", alt: "Navy KAFART card signed Muhammad", caption: "Muhammad’s card pairs a navy background with a cream stamp border.", fit: "contain" },
+      { src: "/assets/kafart-card-22.png", alt: "Red attendee card with Ganiyat’s portrait", caption: "Ganiyat’s portrait in the red colourway.", fit: "contain" },
+      { src: "/assets/kafart-card-21.png", alt: "Gold attendee card bearing the name Fyada", caption: "Fyada’s card in festival gold.", fit: "contain" },
+      { src: "/assets/kafart-card-20.png", alt: "Black attendee card with Auwal’s halftone portrait", caption: "Auwal’s card in black and cream.", fit: "contain" },
       {
         src: "/assets/kafart-live-website.png",
         alt: "The KAFART website homepage for the sixth edition",
@@ -152,20 +153,18 @@ export const projects: Project[] = [
     discipline: "Visual design, identity and cultural storytelling",
     lead: "A collection of identity, editorial and visual work made across different contexts.",
     summary: "These selected projects bring together visual identities, posters, patterns and moments from cultural work. Some are commissioned designs; others are exploratory concepts.",
-    contribution: ["Created concept posters for the Arewa International Film Festival and an opening flyer for Cloaks Gallery.", "Designed a unity fabric pattern combining Benin Bronze masks, Nsibidi, Arewa patterns, the Abuja City Gate, Wazobia and other Nigerian references.", "Explored identity concepts for RecurX and The Queens Partners,.", "Designed a Kaduna State two-year anniversary poster."],
+    contribution: ["Created concept posters for the Arewa International Film Festival and an opening flyer for Cloaks Gallery.", "Designed a unity fabric pattern combining Benin Bronze masks, Nsibidi, Arewa patterns, the Abuja City Gate, Wazobia and other Nigerian references.", "Explored identity concepts for RecurX and The Queen’s Partners.", "Designed a Kaduna State two-year anniversary poster."],
     evidence: ["Poster and identity design", "Fabric pattern exploration", "Brand concepts and cultural documentation"],
     hero: "/assets/creative-aiff.png",
     heroAlt: "Concept poster for the Arewa International Film Festival",
     accent: "ink",
     images: [
+      { src: "/assets/creative-cloaks.png", alt: "Cream opening-day flyer with a model in a blue abaya", caption: "Opening-day flyer for Cloaks Gallery, an abaya shop in Kaduna.", fit: "contain" },
+      { src: "/assets/creative-naija-pattern.png", alt: "Gold and indigo fabric design with repeating Nigerian symbols", caption: "For a national fabric competition, I brought Nsibidi, Arewa motifs and the Abuja City Gate into one repeat.", fit: "contain" },
+      { src: "/assets/creative-recurx.png", alt: "White rounded mark on a dark background", caption: "The RecurX concept takes its continuous curves from the idea of recurring payments.", fit: "contain" },
+      { src: "/assets/creative-kaduna-poster.png", alt: "Governor Uba Sani’s portrait surrounded by illustrated accomplishments", caption: "Poster marking Governor Uba Sani’s first two years in office in Kaduna State.", fit: "contain" },
       ...(collection.aiff as ProjectImage[]),
       ...(collection.queens as ProjectImage[]),
-      { src: "/assets/creative-aiff.png", alt: "Arewa International Film Festival poster concept", caption: "Arewa International Film Festival poster concept", fit: "contain" },
-      { src: "/assets/creative-cloaks.png", alt: "Cloaks Gallery grand opening flyer", caption: "Cloaks Gallery grand opening flyer", fit: "contain" },
-      { src: "/assets/creative-naija-pattern.png", alt: "Fabric pattern exploring Nigerian unity", caption: "Fabric pattern exploring Nigerian unity", fit: "contain" },
-      { src: "/assets/creative-recurx.png", alt: "RecurX logo concept", caption: "RecurX logo concept", fit: "contain" },
-      { src: "/assets/creative-queens.png", alt: "The Queens Partners identity concept", caption: "The Queens Partners identity concept", fit: "contain" },
-      { src: "/assets/creative-kaduna-poster.png", alt: "Kaduna State two-year anniversary poster", caption: "Kaduna State two-year anniversary poster", fit: "contain" },
     ],
     links: [],
   },

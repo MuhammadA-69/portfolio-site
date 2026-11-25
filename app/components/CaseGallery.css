@@ -34,3 +34,15 @@
 
 .image-dialog { inset:0; width:100vw; height:100vh; height:100dvh; max-width:100vw; max-height:100vh; max-height:100dvh; }
 .image-dialog::backdrop { background:var(--paper); }
+
+.gallery-more { margin-top: 24px; }
+.gallery-more summary {
+  width: fit-content;
+  padding-block: 12px;
+  color: var(--olive);
+  cursor: pointer;
+}
+.gallery-more summary:hover { text-decoration: underline; }
+.gallery-more .gallery-grid { margin-top: 20px; }
+.gallery-more:not([open]) .when-expanded,
+.gallery-more[open] .when-collapsed { display: none; }

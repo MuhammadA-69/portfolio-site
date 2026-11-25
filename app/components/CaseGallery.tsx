@@ -16,17 +16,26 @@ export function CaseGallery({ images, title = "A closer look", id = "project-gal
     return () => { document.body.style.overflow = previous; };
   }, [open]);
   const select = (offset: number) => setActive((index) => (index + offset + images.length) % images.length);
-  return <section className="page-shell case-gallery section-block" aria-labelledby={id}>
-    <div className="gallery-heading"><h2 id={id}>{title}</h2><p>Photographs, artefacts and evidence from the work.</p></div>
-    <div className="gallery-grid">
-      {images.map((image, index) => <figure key={`${image.src}-${index}`} className={image.fit === "contain" ? "gallery-contain" : ""}>
+  const previewCount = images.length > 8 ? 4 : images.length;
+  function thumbnail(image: ProjectImage, index: number) {
+    return <figure key={image.src} className={image.fit === "contain" ? "gallery-contain" : ""}>
         <button type="button" aria-label={`Enlarge: ${image.caption}`} onClick={() => { setActive(index); dialog.current?.showModal(); setOpen(true); }}>
-          <img src={sitePath(image.src)} alt={image.alt} loading="lazy" />
+          <img src={sitePath(image.thumbnail ?? image.src)} alt={image.alt} loading="lazy" decoding="async" />
           <span className="gallery-enlarge" aria-hidden="true">View image</span>
         </button>
         <figcaption>{image.caption}</figcaption>
-      </figure>)}
-    </div>
+      </figure>;
+  }
+  return <section className="page-shell case-gallery section-block" aria-labelledby={id}>
+    <div className="gallery-heading"><h2 id={id}>{title}</h2></div>
+    <div className="gallery-grid">{images.slice(0, previewCount).map(thumbnail)}</div>
+    {images.length > previewCount && <details className="gallery-more">
+      <summary>
+        <span className="when-collapsed">Show {images.length - previewCount} more images</span>
+        <span className="when-expanded">Show fewer images</span>
+      </summary>
+      <div className="gallery-grid">{images.slice(previewCount).map((image, i) => thumbnail(image, i + previewCount))}</div>
+    </details>}
     <dialog ref={dialog} className="image-dialog" aria-label="Project image viewer"
       onClose={() => setOpen(false)}
       onClick={(event) => { if (event.target === event.currentTarget) dialog.current?.close(); }}
@@ -45,12 +54,12 @@ export function CaseGallery({ images, title = "A closer look", id = "project-gal
         {images.length > 1 && <button className="image-dialog-arrow image-dialog-previous" type="button" aria-label="Previous image" title="Previous image (left arrow)" onClick={() => select(-1)}>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7" /></svg>
         </button>}
-        <img src={sitePath(images[active].src)} alt={images[active].alt} />
+        {open && <img src={sitePath(images[active].src)} alt={images[active].alt} />}
         {images.length > 1 && <button className="image-dialog-arrow image-dialog-next" type="button" aria-label="Next image" title="Next image (right arrow)" onClick={() => select(1)}>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg>
         </button>}
       </div>
-      <p className="image-dialog-caption">{images[active].caption}</p>
+      <p className="image-dialog-caption" aria-live="polite">{images[active].caption}</p>
     </dialog>
   </section>;
 }

@@ -72,7 +72,7 @@ export default function AboutPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="about-hero page-shell">
           <div>
             <h1>Culture &amp; systems.</h1>

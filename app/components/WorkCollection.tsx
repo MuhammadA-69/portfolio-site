@@ -8,7 +8,7 @@ const categories = ["All", "Culture", "Communications", "Technology", "Design", 
 const groups: Record<string, string[]> = {
   "creative-work": ["Design", "Culture"],
   hibaf: ["Culture", "Communications", "Technology", "Design"],
-  kafart: ["Culture", "Communications", "Technology"],
+  kafart: ["Culture", "Communications", "Technology", "Design"],
   "subject-to-climate": ["Communications"],
   "northern-creatives-conference": ["Culture", "Communications", "Writing"],
   "editorial-work": ["Culture", "Writing"],

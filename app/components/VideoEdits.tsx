@@ -9,14 +9,14 @@ export function VideoEdits() {
   return <section className="page-shell case-videos section-block" aria-labelledby="case-videos-heading">
     <div><h2 id="case-videos-heading">In motion</h2><p>A selection of videos I edited for KAFART.</p><p className="video-count">{edits.length} edits · Select a title to watch</p></div>
     <div className="video-library">
-      <video key={video.src} controls preload="none" playsInline aria-label={video.title}>
-        <source src={sitePath(video.src)} type="video/mp4" /> Your browser does not support video playback.
-      </video>
-      <div className="video-current"><span>{video.group}</span><h3>{video.title}</h3></div>
       <label htmlFor="video-picker">Choose a video</label>
       <select id="video-picker" value={selected} onChange={event => setSelected(Number(event.target.value))}>
         {edits.map((item, index) => <option value={index} key={item.src}>{item.group} — {item.title}</option>)}
       </select>
+      <video key={video.src} controls preload="none" playsInline aria-label={video.title}
+        poster={sitePath(video.src.replace("/videos/", "/videos/posters/").replace(/\.mp4$/, ".webp"))}>
+        <source src={sitePath(video.src)} type="video/mp4" /> Your browser does not support video playback.
+      </video>
       <a className="text-link" href={sitePath(video.src)}>Open video directly</a>
     </div>
   </section>;

@@ -1,86 +1,100 @@
 [
   {
     "src": "/assets/kafart-graphic-01.png",
-    "alt": "1 WEEK YLW-1",
-    "caption": "KAFART Pop-Up 2025 · 1 WEEK YLW-1",
-    "fit": "contain"
+    "alt": "White countdown lettering inside a gold KAFART Pop-Up border",
+    "caption": "One week to the KAFART Abuja Pop-Up, 2025.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-graphic-01-preview.webp"
   },
   {
     "src": "/assets/kafart-graphic-02.png",
-    "alt": "1 WEEK YLW-2",
-    "caption": "KAFART Pop-Up 2025 · 1 WEEK YLW-2",
-    "fit": "contain"
+    "alt": "Gold-bordered programme listing printmaking, art, talks, fashion and networking",
+    "caption": "Programme and ticket information for the Abuja Pop-Up.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-graphic-02-preview.webp"
   },
   {
     "src": "/assets/kafart-graphic-03.png",
-    "alt": "ARTIST TALK",
-    "caption": "KAFART Pop-Up 2025 · ARTIST TALK",
-    "fit": "contain"
+    "alt": "Three speaker portraits beneath the gold Artist Talk heading",
+    "caption": "Artist talk announcement for the 2025 Abuja Pop-Up.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-graphic-03-preview.webp"
   },
   {
     "src": "/assets/kafart-graphic-04.png",
-    "alt": "DESIGNER TALK",
-    "caption": "KAFART Pop-Up 2025 · DESIGNER TALK",
-    "fit": "contain"
+    "alt": "Four speaker portraits on a black Designer Talk poster",
+    "caption": "Designer talk announcement for the 2025 Abuja Pop-Up.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-graphic-04-preview.webp"
   },
   {
     "src": "/assets/kafart-graphic-05.png",
-    "alt": "DRAFT POSTER",
-    "caption": "KAFART Pop-Up 2025 · DRAFT POSTER",
-    "fit": "contain"
+    "alt": "Festival photographs surround a black panel announcing ticket availability",
+    "caption": "Ticket availability poster for the Abuja Pop-Up.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-graphic-05-preview.webp"
   },
   {
     "src": "/assets/kafart-graphic-06.png",
-    "alt": "EXHIBITING ARTISTS (BLACK)",
-    "caption": "KAFART Pop-Up 2025 · EXHIBITING ARTISTS (BLACK)",
-    "fit": "contain"
+    "alt": "Artist names in white on a black poster with a gold border",
+    "caption": "The exhibiting artists at the Abuja Pop-Up.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-graphic-06-preview.webp"
   },
   {
     "src": "/assets/kafart-graphic-07.png",
-    "alt": "EXHIBITING DESIGNERS (GRN)",
-    "caption": "KAFART Pop-Up 2025 · EXHIBITING DESIGNERS (GRN)",
-    "fit": "contain"
+    "alt": "Designer names on a black poster with a green border",
+    "caption": "The exhibiting designers at the Abuja Pop-Up.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-graphic-07-preview.webp"
   },
   {
     "src": "/assets/kafart-graphic-08.png",
-    "alt": "KAFART Essentials Post-02",
-    "caption": "KAFART Pop-Up 2025 · KAFART Essentials Post-02",
-    "fit": "contain"
+    "alt": "Gold guide cover with a red-toned photograph of hands",
+    "caption": "Cover of the KAFART Pop-Up essentials guide.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-graphic-08-preview.webp"
   },
   {
     "src": "/assets/kafart-graphic-09.png",
-    "alt": "NT-10",
-    "caption": "KAFART Pop-Up 2025 · NT-10",
-    "fit": "contain"
+    "alt": "A portrait and name framed by a green vendor border",
+    "caption": "Vendor profile for Muhammad Al-amin Yusha’u at the 2025 Pop-Up.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-graphic-09-preview.webp"
   },
   {
     "src": "/assets/kafart-2026-card-guide.png",
-    "alt": "Guide to creating a personalised KAFART 6 attendee card",
-    "caption": "Guide to creating a personalised KAFART 6 attendee card",
-    "fit": "contain"
+    "alt": "Gold instructional graphic with a sample portrait card",
+    "caption": "How to make a personalised attendee card for KAFART 6.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-2026-card-guide-preview.webp"
   },
   {
     "src": "/assets/kafart-2026-ticket-1.png",
-    "alt": "KAFART 6 ticket design 1",
-    "caption": "KAFART 6 ticket design 1",
-    "fit": "contain"
+    "alt": "Black and gold ticket with a photograph of two people and a QR code",
+    "caption": "Premium ticket for KAFART 6.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-2026-ticket-1-preview.webp"
   },
   {
     "src": "/assets/kafart-2026-ticket-2.png",
-    "alt": "KAFART 6 ticket design 2",
-    "caption": "KAFART 6 ticket design 2",
-    "fit": "contain"
+    "alt": "Terracotta ticket with a multicoloured geometric motif and a black stub",
+    "caption": "Standard ticket for KAFART 6.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-2026-ticket-2-preview.webp"
   },
   {
     "src": "/assets/kafart-2026-ticket-3.png",
-    "alt": "KAFART 6 ticket design 3",
-    "caption": "KAFART 6 ticket design 3",
-    "fit": "contain"
+    "alt": "Gold ticket with a radial collage of figures",
+    "caption": "Daily ticket for KAFART 6.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-2026-ticket-3-preview.webp"
   },
   {
     "src": "/assets/kafart-2026-ticket-4.png",
-    "alt": "KAFART 6 ticket design 4",
-    "caption": "KAFART 6 ticket design 4",
-    "fit": "contain"
+    "alt": "Blue ticket with a repeating geometric motif and a gold stub",
+    "caption": "Student ticket for KAFART 6.",
+    "fit": "contain",
+    "thumbnail": "/assets/kafart-2026-ticket-4-preview.webp"
   }
 ]

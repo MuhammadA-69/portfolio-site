@@ -7,7 +7,7 @@ import { projects } from "./portfolio-data";
 import { sitePath } from "./site-path";
 const selected = ["kafart", "hibaf", "editorial-work", "northern-creatives-conference", "subject-to-climate"].map((slug) => projects.find((project) => project.slug === slug)!);
 export default function Home() {
- return <><SiteHeader /><main id="main-content">
+ return <><SiteHeader /><main id="main-content" tabIndex={-1}>
   <section className="home-hero page-shell">
    <div className="hero-introduction"><p>Muhammad Al-amin Yusha’u</p><p>Communications, culture<br />& responsible technology</p></div>
    <h1>Culture,<br /><span>made public.</span></h1>

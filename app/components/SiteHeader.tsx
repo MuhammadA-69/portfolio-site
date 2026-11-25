@@ -58,6 +58,7 @@ export function SiteHeader() {
 
   return (
     <>
+    <a className="skip-link" href="#main-content">Skip to content</a>
     <div className="header-spacer" aria-hidden="true" />
     <header
       className={`site-header ${menuOpen ? "site-header-menu-open" : ""}`}

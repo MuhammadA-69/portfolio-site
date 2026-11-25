@@ -5,6 +5,14 @@ import test from "node:test";
 const readExport = (path) =>
   readFile(new URL(`../out/${path}`, import.meta.url), "utf8");
 
+test("each KAFART graphic preview, original and video poster is exported", async () => {
+  const graphics = JSON.parse(await readFile(new URL("../app/kafart-graphics.json", import.meta.url)));
+  const videos = JSON.parse(await readFile(new URL("../app/video-edits.json", import.meta.url)));
+  const files = graphics.flatMap(({ src, thumbnail }) => [src, thumbnail]);
+  for (const video of videos) files.push(video.src.replace("/videos/", "/videos/posters/").replace(/\.mp4$/, ".webp"));
+  for (const file of files) await access(new URL(`../out${file}`, import.meta.url));
+});
+
 test("the homepage is present in the static export", async () => {
   const html = await readExport("index.html");
 

@@ -48,7 +48,7 @@ export default async function ProjectPage({
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section
           className={`case-hero accent-${project.accent} case-hero-${project.slug}`}
         >
@@ -63,6 +63,15 @@ export default async function ProjectPage({
                 <span>{project.period}</span>
                 <span>{project.discipline}</span>
               </div>
+              {project.slug === "kafart" && <nav className="case-contents" aria-label="Jump to KAFART work">
+                <a href="#case-videos-heading">Videos</a>
+                <a href="#kafart-graphics">Graphics</a>
+                <a href="#arewa-symbols">Arewa symbols</a>
+                <a href="#merchandise-design">Merchandise</a>
+                <a href="#hands-of-resilience">Exhibition guide</a>
+                <a href="#kemi-visit">Kemi’s visit</a>
+                <a href="#project-gallery">Cards and fieldwork</a>
+              </nav>}
             </div>
             <img src={sitePath(project.hero)} alt={project.heroAlt} />
           </div>
@@ -119,7 +128,7 @@ export default async function ProjectPage({
           <CaseGallery images={collection.trifold as ProjectImage[]} title="Hands of Resilience" id="hands-of-resilience" />
           <CaseGallery images={collection.kemi as ProjectImage[]} title="Kemi Ilesanmi’s visit" id="kemi-visit" />
         </>}
-        <CaseGallery images={project.images} />
+        <CaseGallery images={project.images} title={project.slug === "kafart" ? "Cards and fieldwork" : undefined} />
 
         <section className="next-project page-shell">
           <p>Next case study</p>

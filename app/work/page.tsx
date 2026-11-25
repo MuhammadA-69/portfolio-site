@@ -14,7 +14,7 @@ export default function WorkPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="inner-hero page-shell">
           <h1>Selected work</h1>
           <p>
