@@ -35,8 +35,11 @@ export default function AboutPage() {
               I currently serve as Strategic Communications Lead at KAFART, a
               cultural platform working with artists, designers, researchers,
               public institutions and partners across Northern Nigeria and
-              beyond. I joined in 2023 and now lead communications planning
-              across festival editions and related programmes.
+              beyond. I first joined in 2022 as a volunteer Editorial
+              Assistant—stepping in across exhibition setup, technical support
+              and production—before being appointed IT &amp; Communications
+              Officer in 2023 and promoted to Strategic Communications Lead in
+              2026.
             </p>
             <p>
               My work sits between programme delivery, research and public

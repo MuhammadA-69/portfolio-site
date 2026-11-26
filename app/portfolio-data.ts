@@ -47,13 +47,14 @@ export const projects: Project[] = [
     role: "Strategic Communications Lead",
     organisation: "Kaduna Fashion & Art Exhibition",
     location: "Kaduna & Abuja, Nigeria",
-    period: "2023 – present",
+    period: "2022 – present",
     discipline: "Strategic communications, digital infrastructure, curatorial coordination",
     lead:
       "Building the public voice and digital memory of a multidisciplinary cultural platform in Northern Nigeria.",
     summary:
-      "At the Kaduna Fashion and Art Exhibition, I lead communications planning across festival editions and related programmes. The work moves between research, programme delivery, publishing and the systems that help a cultural institution remain useful between events.",
+      "I joined the Kaduna Fashion and Art Exhibition in 2022 as a volunteer Editorial Assistant, helping with exhibition installation and hands-on technical support well beyond my initial brief. That work led to my appointment as IT & Communications Officer in 2023 and promotion to Strategic Communications Lead in 2026—moving between research, programme delivery, publishing and the systems that keep a cultural institution useful between events.",
     contribution: [
+      "Started in 2022 as a volunteer Editorial Assistant, assisting with exhibition setup and technical operations before being appointed IT & Communications Officer (2023) and promoted to Strategic Communications Lead (2026).",
       "Designed and built the KAFART personalised card maker using Astro, TypeScript, browser canvas and local MediaPipe portrait processing; this project led to a similar commission for HIBAF.",
       "Built KAFART's trilingual website in English, French and Hausa, including the festival archive, exhibitor directory and open-call portal, and developed KAFART Shop.",
       "Initiated the KAFART and Kaduna Museum augmented-reality integration and coordinated curatorial and technical contributors around one visitor journey.",
@@ -639,11 +640,11 @@ export const tools = [
 
 export const experience = [
   {
-    period: "2023 – now",
+    period: "2026 – now",
     role: "Strategic Communications Lead",
     place: "KAFART",
     detail:
-      "Leading communications planning and public-facing digital systems across festival editions and related programmes.",
+      "Promoted to lead communications strategy, institutional voice and public engagement across festival editions and related programmes.",
   },
   {
     period: "2025",
@@ -660,11 +661,18 @@ export const experience = [
       "Built a 100+ stakeholder pipeline, coordinated Kaduna partnerships including Wonderwise Productions and documented the conference as rapporteur.",
   },
   {
-    period: "2022 – 2024",
-    role: "Editorial Assistant and Associate Editor",
-    place: "The Revue",
+    period: "2023 – 2025",
+    role: "IT & Communications Officer",
+    place: "KAFART",
     detail:
-      "Edited submissions, curated cultural research and contributed original fiction and features.",
+      "Appointed after stepping in on technical and exhibition work as a volunteer; built public-facing digital systems, planned festival communications and coordinated technical and curatorial workflows.",
+  },
+  {
+    period: "2022 – 2024",
+    role: "Volunteer Editorial Assistant and Associate Editor",
+    place: "KAFART / The Revue",
+    detail:
+      "Joined KAFART as a volunteer in 2022—helping set up the art exhibition and handling technical support alongside editing submissions, curating research and contributing original writing.",
   },
 ];
 

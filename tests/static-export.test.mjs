@@ -132,6 +132,8 @@ test("the redesign retains the requested content and clean semantics", async () 
   assert.match(about, /about-headshot\.jpg/);
   assert.match(about, /Next\.js, React and TypeScript/);
   assert.match(about, /Writing, press &amp; talks/);
+  assert.match(about, /IT &amp; Communications Officer/);
+  assert.match(about, /joined in 2022/);
 
   const alama = await readExport("work/alama/index.html");
   assert.match(alama, /Offline-first capture/);
